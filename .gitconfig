@@ -1,5 +1,15 @@
 [user]
-	name = Adrien Gallouët
-	email = adrien@gallouet.fr
+    name = Adrien Gallouët
+    email = adrien@gallouet.fr
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    ls = ls-files
+    df = diff
+    ds = diff --staged
+    ll = log --graph --oneline
 [core]
-	editor = vim
+    pager = less -F -X
+    editor = vim
