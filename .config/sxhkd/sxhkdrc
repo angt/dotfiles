@@ -1,5 +1,5 @@
 super + Return
-	urxvt
+	urxvtc
 
 super + r
 	pkill -USR1 -x sxhkd

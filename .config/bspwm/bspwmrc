@@ -1,8 +1,9 @@
 #! /bin/sh
 
-xautolock -time 5 -locker slock -lockaftersleep &
-xsetroot -cursor_name left_ptr &
+xautolock -time 5 -locker slock &
+xsetroot -cursor_name left_ptr
 
+urxvtd -q -o -f
 sxhkd &
 
 bspc config border_width         2
@@ -16,8 +17,8 @@ bspc config history_aware_focus  true
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a chromium desktop=^2
-bspc rule -a mpv state=floating
+bspc rule -a chromium desktop=^2 state=fullscreen
+bspc rule -a mpv state=fullscreen
 
-urxvt &
+urxvtc &
 chromium &
