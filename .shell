@@ -1,0 +1,12 @@
+#!/bin/sh
+
+shell_reload() {
+    if [ -d ~/.shell.d ] ; then
+        for f in $(find ~/.shell.d/ -name '*.sh') ; do
+            [ -f "$f" ] && . "$f"
+        done
+        unset f
+    fi
+}
+
+shell_reload
