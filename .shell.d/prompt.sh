@@ -15,7 +15,7 @@ yellow="\[\e[33m\]"
 blue="\[\e[34m\]"
 magenta="\[\e[35m\]"
 cyan="\[\e[36m\]"
-white="\[\e[97m\]"
+white="\[\e[37m\]"
 
 userStyle="${magenta}"
 hostStyle="${blue}"
