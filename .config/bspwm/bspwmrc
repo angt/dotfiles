@@ -14,10 +14,11 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
+bspc config single_monocle       true
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a chromium desktop=^2 state=fullscreen
+bspc rule -a chromium desktop=^2
 bspc rule -a mpv state=fullscreen
 
 urxvtc &
