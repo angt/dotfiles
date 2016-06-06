@@ -1,3 +1,5 @@
+unset LS_COLORS
+
 alias ls='ls -h --color=auto'
 alias l='ls --group-directories-first'
 alias l1='ls -1'
