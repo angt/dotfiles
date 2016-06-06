@@ -26,7 +26,7 @@ hostStyle="${blue}"
 PS1="
 ${bold}${userStyle}\u\
 ${white} at ${hostStyle}\h\
-${white} in ${green}\w\
+${white} in ${green}\W\
 ${white} on ${yellow}\$(prompt_git)
 ${white}\$ ${reset}"
 export PS1
