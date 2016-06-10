@@ -2,14 +2,20 @@
     name = Adrien Gallouët
     email = adrien@gallouet.fr
 [alias]
-    st = status
+    st = status -s -uno
     ci = commit
     br = branch
+    fa = fetch --all
     co = checkout
     ls = ls-files
     df = diff
     ds = diff --staged
     ll = log --graph --oneline
+    rh = reset --hard
 [core]
     pager = less -F -X
     editor = vim
+[url "git@gitlab.com:"]
+    insteadOf = gl:
+[url "git@github.com:"]
+    insteadOf = gh:
