@@ -1,3 +1,7 @@
+set nocompatible
+set esckeys
+set ttyfast
+
 set clipboard=unnamedplus
 
 set title
