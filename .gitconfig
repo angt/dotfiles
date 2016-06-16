@@ -12,6 +12,8 @@
     ds = diff --staged
     ll = log --graph --oneline
     rh = reset --hard
+    cleanup = commit -am "Code cleanup"
+    amend = commit --amend --reuse-message=HEAD
 [core]
     pager = less -F -X
     editor = vim
