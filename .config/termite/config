@@ -1,0 +1,38 @@
+[options]
+font = Mono 12
+scrollback_lines = 10000
+scroll_on_output = false
+scroll_on_keystroke = true
+resize_grip = false
+audible_bell = false
+visible_bell = false
+search_wrap = true
+mouse_autohide = false
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+allow_bold = true
+
+cursor_blink = off
+cursor_shape = block
+
+[colors]
+background = #2e3436
+foreground = #eeeeec
+
+color0  = #2e3436
+color8  = #6e706b
+color1  = #cc0000
+color9  = #ef2929
+color2  = #4e9a06
+color10 = #8ae234
+color3  = #edd400
+color11 = #fce94f
+color4  = #3465a4
+color12 = #729fcf
+color5  = #92659a
+color13 = #c19fbe
+color6  = #07c7ca
+color14 = #63e9e9
+color7  = #d3d7cf
+color15 = #eeeeec

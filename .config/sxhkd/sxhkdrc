@@ -1,5 +1,5 @@
 super + Return
-	urxvtc
+	termite
 
 super + r
 	pkill -USR1 -x sxhkd
