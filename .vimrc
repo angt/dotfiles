@@ -37,7 +37,10 @@ set expandtab
 set wildmode=longest,list,full
 set wildmenu
 
-set list listchars=tab:»·,trail:·
+set listchars=tab:»·,trail:·
+set list
+
+inoremap <S-Tab> <C-V><Tab>
 
 hi Normal guifg=white guibg=black
 hi SpecialKey ctermfg=4 guifg=#3465a4
