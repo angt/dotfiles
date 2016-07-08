@@ -48,3 +48,7 @@ hi NonText    ctermfg=4 guifg=#3465a4
 
 syntax on
 let c_no_curly_error=1
+
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+call plug#end()
