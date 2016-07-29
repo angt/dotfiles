@@ -1,5 +1,12 @@
 #!/bin/sh
 
+shell_add_path() {
+    mkdir -p "${1}" && case ":${PATH}:" in
+        *":${1}:"*) :;;
+        *) export PATH="${1}:${PATH}";;
+    esac
+}
+
 shell_update() {
     cd ~
     [ -d .no.git ] && mv .no.git .git
