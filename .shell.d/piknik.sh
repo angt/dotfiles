@@ -1,3 +1,11 @@
+export GOPATH=${GOPATH:-~/go}
+
+shell_add_path "$GOPATH/bin"
+
+piknik_install() {
+    go get -u github.com/jedisct1/piknik
+}
+
 pko() {
     echo "$*" | piknik -copy
 }
