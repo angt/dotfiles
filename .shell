@@ -1,10 +1,13 @@
 #!/bin/sh
 
 shell_add_path() {
-    mkdir -p "${1}" && case ":${PATH}:" in
-        *":${1}:"*) :;;
-        *) export PATH="${1}:${PATH}";;
+    mkdir -p "$1" || return
+    f=$(readlink -f "$1")
+    case ":${PATH}:" in
+        *":$f:"*) :;;
+        *) export PATH="$f:${PATH}";;
     esac
+    unset f
 }
 
 shell_update() {
