@@ -1,4 +1,4 @@
-export GOPATH=${GOPATH:-~/go}
+export GOPATH=${GOPATH:-~/.go}
 
 shell_add_path "$GOPATH/bin"
 
