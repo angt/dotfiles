@@ -2,7 +2,7 @@
 
 shell_add_path() {
     mkdir -p "$1" || return
-    f=$(readlink -f "$1")
+    f=`cd "$1"; pwd`
     case ":${PATH}:" in
         *":$f:"*) :;;
         *) export PATH="$f:${PATH}";;
