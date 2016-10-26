@@ -11,5 +11,5 @@ shell_add_path "${GOROOT}/bin"
 shell_add_path "${GOPATH}/bin"
 
 go_install() {
-    curl https://storage.googleapis.com/golang/${TGZ} | tar xz -C ${GOROOT} --strip-components=1
+    curl -sSf https://storage.googleapis.com/golang/${TGZ} | tar xz -C ${GOROOT} --strip-components=1
 }
