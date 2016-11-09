@@ -10,15 +10,6 @@ shell_add_path() {
     unset f
 }
 
-shell_update() {
-    cd ~
-    [ -d .no.git ] && mv .no.git .git
-    [ -d .git ] || return
-    git fetch --all
-    git reset --hard origin/master
-    mv .git .no.git
-}
-
 shell_reload() {
     if [ -d ~/.shell.d ] ; then
         for f in ~/.shell.d/?*.sh ; do

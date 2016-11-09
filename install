@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av `dirname $0`/ ~/ --exclude .git --exclude `basename $0`
