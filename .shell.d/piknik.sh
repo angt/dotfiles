@@ -4,6 +4,13 @@ piknik_install() {
     go get -u github.com/jedisct1/piknik
 }
 
+piknik_setup() {
+    if [ ! -f ~/.piknik.toml ]; then
+        printf 'Password: '
+        piknik -genkeys -password | sed -n '/Hybrid/,//p' > ~/.piknik.toml
+    fi
+}
+
 pko() {
     echo "$*" | piknik -copy
 }
