@@ -1,2 +1,3 @@
-alias ta='tmux attach -t'
-alias tn='tmux new-session -s'
+tm() {
+    tmux attach -t $1 || tmux new-session -s $1
+}
