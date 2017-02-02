@@ -51,6 +51,13 @@ cmap w!! w !sudo tee % >/dev/null
 syntax on
 let c_no_curly_error=1
 
+set updatetime=250
+let g:gitgutter_sign_column_always = 1
+let g:ctrlp_map = '<c-p>'
+
 call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
 call plug#end()
