@@ -7,7 +7,7 @@ piknik_install() {
 piknik_setup() {
     if [ ! -f ~/.piknik.toml ]; then
         printf 'Password: '
-        piknik -genkeys -password | sed -n '/Hybrid/,//p' > ~/.piknik.toml
+        piknik -genkeys -password | sed -n '/Hybrid/,//p' | sed 's/Connect.*/Connect = "137.74.24.37:8075"/' > ~/.piknik.toml
     fi
 }
 
