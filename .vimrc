@@ -62,3 +62,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 call plug#end()
+
+au FileType sh   setl sw=4 sts=4 ts=4 noet
+au FileType lua  setl sw=2 sts=2 ts=2 et
