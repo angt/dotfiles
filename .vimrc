@@ -51,17 +51,28 @@ cmap w!! w !sudo tee % >/dev/null
 syntax on
 let c_no_curly_error=1
 
+let g:is_posix = 1
+
 set updatetime=250
 let g:gitgutter_sign_column_always = 1
 let g:ctrlp_map = '<c-p>'
+
+au FileType sh   setl sw=4 sts=4 ts=4 noet
+au FileType lua  setl sw=2 sts=2 ts=2 et
+
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_go_checkers = ['go', 'gofmt', 'golint' , 'govet']
+let g:syntastic_lua_checkers = ["luac", "luacheck"]
+let g:syntastic_lua_luacheck_args = "--no-unused-args"
+let g:syntastic_always_populate_loc_list = 1
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
 call plug#end()
-
-au FileType sh   setl sw=4 sts=4 ts=4 noet
-au FileType lua  setl sw=2 sts=2 ts=2 et
