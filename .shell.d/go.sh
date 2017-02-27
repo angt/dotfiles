@@ -1,4 +1,4 @@
-VERSION=1.7.3
+VERSION=1.8
 OS=`uname | tr [:upper:] [:lower:]`
 ARCH=amd64
 DIR=go${VERSION}
