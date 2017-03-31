@@ -50,11 +50,8 @@ cmap w!! w !sudo tee % >/dev/null
 
 syntax on
 let c_no_curly_error=1
-
 let g:is_posix = 1
 
-set updatetime=250
-let g:gitgutter_sign_column_always = 1
 let g:ctrlp_map = '<c-p>'
 
 au FileType sh   setl sw=4 sts=4 ts=4 noet
@@ -71,7 +68,6 @@ let g:syntastic_always_populate_loc_list = 1
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
