@@ -1,1 +1,6 @@
-hash vim && alias vi=vim
+hash vim || exit
+
+export VISUAL=vim
+export EDITOR=vim
+
+alias vi=vim
