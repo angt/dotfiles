@@ -40,6 +40,8 @@ set wildmenu
 set listchars=tab:»·,trail:·
 set list
 
+set scrolloff=16
+
 inoremap <S-Tab> <C-V><Tab>
 
 hi Normal guifg=white guibg=black
