@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -f "$1" ] && curl -T "$1" https://transfer.sh/"`basename $1`"

@@ -1,6 +1,4 @@
-mkdir -p .ssh
-
-grep 'PRIVATE KEY' -lZR .ssh | xargs -0 chmod 400
+find ~/.ssh -exec grep -sq 'PRIVATE KEY' {} \; -and -exec chmod 400 {} \;
 
 pgrep -u "$USER" ssh-agent > /dev/null || ssh-agent > ~/.ssh-agent-eval
 
