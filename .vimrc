@@ -2,7 +2,7 @@ set nocompatible
 set esckeys
 set ttyfast
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 set title
 set number
