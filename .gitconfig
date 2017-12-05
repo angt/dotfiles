@@ -1,6 +1,12 @@
 [user]
     name = Adrien Gallouët
     email = adrien@gallouet.fr
+[sendemail]
+    from = Adrien Gallouët <adrien@gallouet.fr>
+    smtpEncryption = tls
+    smtpServer = smtp.gmail.com
+    smtpUser = agallouet@gmail.com
+    smtpServerPort = 587
 [alias]
     st = status -s -uno
     ci = commit
