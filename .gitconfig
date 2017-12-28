@@ -34,3 +34,5 @@
     insteadOf = ghh:
 [url "aur@aur.archlinux.org:"]
     insteadOf = aur:
+[url "https://aur.archlinux.org/"]
+    insteadOf = aurh:
