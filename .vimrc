@@ -68,7 +68,6 @@ let g:syntastic_lua_luacheck_args = "--no-unused-args"
 let g:syntastic_always_populate_loc_list = 1
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
