@@ -72,4 +72,5 @@ Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
