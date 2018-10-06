@@ -1,10 +1,10 @@
 source ~/.shell.d/go.sh
 
-piknik_install() {
+shell_install_piknik() {
     go get -u github.com/jedisct1/piknik
 }
 
-piknik_setup() {
+shell_setup_piknik() {
     if [ ! -f ~/.piknik.toml ]; then
         printf 'Password: '
         piknik -genkeys -password | sed -n '/Hybrid/,//p' | sed 's/Connect.*/Connect = "137.74.24.37:8075"/' > ~/.piknik.toml

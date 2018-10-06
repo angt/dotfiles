@@ -1,6 +1,6 @@
 # Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
 
-prompt_git() {
+shell_prompt_git() {
     git symbolic-ref --quiet --short HEAD 2> /dev/null ||
     git rev-parse --short HEAD 2> /dev/null ||
     echo '(none)'
@@ -27,7 +27,7 @@ PS1="
 ${bold}${userStyle}\u\
 ${white} at ${hostStyle}\h\
 ${white} in ${green}\w\
-${white} on ${yellow}\$(prompt_git)
+${white} on ${yellow}\$(shell_prompt_git)
 ${white}\$ ${reset}"
 export PS1
 
