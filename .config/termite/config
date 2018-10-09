@@ -1,5 +1,5 @@
 [options]
-font = Mono 12
+font = Mono 10
 scrollback_lines = 10000
 scroll_on_output = false
 scroll_on_keystroke = true
@@ -17,10 +17,10 @@ cursor_blink = off
 cursor_shape = block
 
 [colors]
-background = #2e3436
+background = #0b0e0e
 foreground = #eeeeec
 
-color0  = #2e3436
+color0  = #0b0e0e
 color8  = #6e706b
 color1  = #cc0000
 color9  = #ef2929
