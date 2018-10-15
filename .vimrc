@@ -73,4 +73,5 @@ Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'dleonard0/pony-vim-syntax'
 call plug#end()
