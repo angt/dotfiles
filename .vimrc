@@ -66,6 +66,7 @@ let g:syntastic_go_checkers = ['go', 'gofmt', 'golint' , 'govet']
 let g:syntastic_lua_checkers = ["luac", "luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_pony_checkers = ['currycomb']
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -74,4 +75,5 @@ Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'dleonard0/pony-vim-syntax'
+Plug 'killerswan/pony-currycomb.vim'
 call plug#end()
