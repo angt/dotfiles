@@ -18,6 +18,9 @@
     ds = diff --staged
     ll = log --oneline
     rh = reset --hard
+    rb = rebase
+    cp = cherry-pick
+    sh = show
     outgoing = format-patch -M -n -s -o outgoing origin/master
     cleanup = commit -am 'Code cleanup'
     amend = commit --amend --reuse-message=HEAD
