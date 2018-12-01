@@ -49,6 +49,7 @@ hi SpecialKey ctermfg=4 guifg=#3465a4
 hi NonText    ctermfg=4 guifg=#3465a4
 
 cmap w!! w !sudo tee % >/dev/null
+map ° /TODO<ENTER>
 
 syntax on
 let c_no_curly_error=1
