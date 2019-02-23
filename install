@@ -1,4 +1,0 @@
-#!/bin/sh
-rsync -av "$(dirname "$0")"/ ~/ --exclude .git --exclude install --exclude diff
-curl -sSf https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.shell.d/git.sh
-curl -sSf https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.shell.d/z.sh

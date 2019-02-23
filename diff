@@ -1,2 +1,0 @@
-#!/bin/sh
-diff -x '[^.]*' -x .git -r "$(dirname "$0")" ~
