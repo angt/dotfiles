@@ -1,4 +1,4 @@
-hash vim || exit
+hash vim 2>/dev/null || return
 
 export VISUAL=vim
 export EDITOR=vim
