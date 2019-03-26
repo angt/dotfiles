@@ -1,22 +1,22 @@
 #!/bin/sh
 
 shell_add_path() {
-    mkdir -p "$1" || return
-    f=`cd "$1"; pwd`
-    case ":${PATH}:" in
-        *":$f:"*) :;;
-        *) export PATH="$f:${PATH}";;
-    esac
-    unset f
+	mkdir -p "$1" || return
+	f=$(cd "$1" && pwd)
+	case ":$PATH:" in
+		*":$f:"*) :;;
+		*) export PATH="$f:$PATH";;
+	esac
+	unset f
 }
 
 shell_reload() {
-    if [ -d ~/.shell.d ] ; then
-        for f in ~/.shell.d/?*.sh ; do
-            [ -f "$f" ] && . "$f"
-        done
-        unset f
-    fi
+	if [ -d ~/.shell.d ] ; then
+		for f in ~/.shell.d/?*.sh ; do
+			[ -f "$f" ] && . "$f"
+		done
+		unset f
+	fi
 }
 
 shell_reload
