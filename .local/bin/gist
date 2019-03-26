@@ -15,8 +15,6 @@ fi
 
 [ "$GIST" ] || exit
 
-file=$(basename "$1")
-
-jq -R --arg file "$file" '{public:false,files:{($file):{content:.}}}' < "$1" \
-	| curl -sSf -X POST -d@- -u "$GIST" https://api.github.com/gists \
+jq -Rs --arg file "$(basename "$1")" '{public:false,files:{($file):{content:.}}}' "$1" \
+	| curl -sSf -X POST -d@- -u "$GIST" "https://api.github.com/gists" \
 	| jq -r '.files[]|"\(.raw_url)"'
