@@ -16,7 +16,7 @@
     ls = ls-files
     df = diff
     ds = diff --staged
-    ll = log --oneline
+    ll = log --oneline -20
     rh = reset --hard
     rb = rebase
     cp = cherry-pick
