@@ -27,6 +27,8 @@
 [core]
     pager = less -F -X
     editor = vim
+[gc]
+    auto = 0
 [url "git@gitlab.com:"]
     insteadOf = gl:
 [url "git@github.com:"]
