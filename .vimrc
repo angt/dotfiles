@@ -77,4 +77,5 @@ Plug 'rust-lang/rust.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'dleonard0/pony-vim-syntax'
 Plug 'killerswan/pony-currycomb.vim'
+Plug 'zah/nim.vim'
 call plug#end()
