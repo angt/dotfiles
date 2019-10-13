@@ -6,30 +6,28 @@ shell_prompt_git() {
     echo '(none)'
 }
 
-bold="\[\e[1m\]"
-reset="\[\e[0m\]"
-black="\[\e[30m\]"
-red="\[\e[31m\]"
-green="\[\e[32m\]"
-yellow="\[\e[33m\]"
-blue="\[\e[34m\]"
-magenta="\[\e[35m\]"
-cyan="\[\e[36m\]"
-white="\[\e[37m\]"
+bld="\\[\\e[1m\\]"
+rst="\\[\\e[0m\\]"
+red="\\[\\e[31m\\]"
+grn="\\[\\e[32m\\]"
+ylw="\\[\\e[33m\\]"
+blu="\\[\\e[34m\\]"
+mgt="\\[\\e[35m\\]"
+wht="\\[\\e[37m\\]"
 
-userStyle="${magenta}"
-hostStyle="${blue}"
+userStyle="$mgt"
+hostStyle="$blu"
 
-[ "${USER}" == "root" ] && userStyle="${red}"
-[ -n "${SSH_TTY}" ] && hostStyle="${red}"
+[ "$USER" == "root" ] && userStyle="$red"
+[ "$SSH_TTY"        ] && hostStyle="$red"
 
 PS1="
-${bold}${userStyle}\u\
-${white} at ${hostStyle}\h\
-${white} in ${green}\w\
-${white} on ${yellow}\$(shell_prompt_git)
-${white}\$ ${reset}"
+$bld$userStyle\\u\
+$wht at $hostStyle\\h\
+$wht in $grn\\w\
+$wht on $ylw\$(shell_prompt_git)
+$wht\$ $rst"
 export PS1
 
-PS2="${white}> ${reset}"
+PS2="$wht> $rst"
 export PS2
