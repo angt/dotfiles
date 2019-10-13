@@ -15,6 +15,7 @@
     co = checkout
     ls = ls-files
     df = diff
+    dw = diff --word-diff=color
     ds = diff --staged
     ll = log --oneline -20
     rh = reset --hard
