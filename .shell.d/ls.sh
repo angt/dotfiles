@@ -2,7 +2,7 @@ unset LS_COLORS
 export CLICOLOR=1
 
 ls --color=auto &>/dev/null && \
-    alias ls='ls --color=auto'
+	alias ls='ls --color=auto'
 
 alias l='ls --group-directories-first'
 alias l1='ls -1'
