@@ -1,5 +1,4 @@
 shell_install_musl() {
-	cd /tmp || return
 	rm -rf musl-cross-make
 	git clone https://github.com/richfelker/musl-cross-make
 	cd musl-cross-make || return
