@@ -60,22 +60,9 @@ let g:ctrlp_map = '<c-p>'
 au FileType sh   setl sw=4 sts=4 ts=4 noet
 au FileType lua  setl sw=2 sts=2 ts=2 et
 
-let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_go_checkers = ['go', 'gofmt', 'golint' , 'govet']
-let g:syntastic_lua_checkers = ["luac", "luacheck"]
-let g:syntastic_lua_luacheck_args = "--no-unused-args"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_pony_checkers = ['currycomb']
-
 call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'dleonard0/pony-vim-syntax'
-Plug 'killerswan/pony-currycomb.vim'
-Plug 'zah/nim.vim'
 call plug#end()
