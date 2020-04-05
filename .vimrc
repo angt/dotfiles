@@ -42,6 +42,14 @@ set list
 
 set scrolloff=16
 
+set nobackup
+set nowb
+set noswapfile
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
+
 inoremap <S-Tab> <C-V><Tab>
 
 hi Normal guifg=white guibg=black
