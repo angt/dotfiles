@@ -1,11 +1,5 @@
 # Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
 
-shell_prompt_git() {
-    git symbolic-ref --quiet --short HEAD 2> /dev/null ||
-    git rev-parse --short HEAD 2> /dev/null ||
-    echo '(none)'
-}
-
 bld="\\[\\e[1m\\]"
 rst="\\[\\e[0m\\]"
 red="\\[\\e[31m\\]"
@@ -25,7 +19,7 @@ PS1="
 $bld$userStyle\\u\
 $wht at $hostStyle\\h\
 $wht in $grn\\w\
-$wht on $ylw\$(shell_prompt_git)
+$wht on $ylw\$(git-ref)
 $wht\$ $rst"
 export PS1
 
