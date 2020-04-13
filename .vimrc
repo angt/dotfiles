@@ -73,4 +73,5 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'chrisbra/unicode.vim'
 call plug#end()
