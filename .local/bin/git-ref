@@ -2,7 +2,7 @@
 
 exec 2>/dev/null
 
-git symbolic-ref --quiet --short HEAD && return
-git rev-parse    --quiet --short HEAD && return
+git symbolic-ref --quiet --short HEAD && exit
+git rev-parse    --quiet --short HEAD && exit
 
 echo '(none)'
