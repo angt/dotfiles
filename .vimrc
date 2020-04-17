@@ -64,6 +64,7 @@ let g:netrw_winsize = 25
 let g:is_posix = 1
 let g:ctrlp_map = '<c-p>'
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_c_clangtidy_checks = []
 
 au FileType sh   setl sw=4 sts=4 ts=4 noet
 au FileType lua  setl sw=2 sts=2 ts=2 et
