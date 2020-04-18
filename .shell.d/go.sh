@@ -1,4 +1,4 @@
-VERSION=1.14
+VERSION=1.14.2
 OS=$(uname | tr '[:upper:]' '[:lower:]')
 TGZ=go$VERSION.$OS-amd64.tar.gz
 
