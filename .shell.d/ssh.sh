@@ -5,4 +5,4 @@ find ~/.ssh -exec grep -sq 'PRIVATE KEY' {} \; -and -exec chmod 400 {} \;
 		ssh-agent >~/.ssh-agent
 		. ~/.ssh-agent
 	fi
-} 2>/dev/null
+} >/dev/null 2>/dev/null
