@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -r "$1" ] || exit
+
+jq -Rs --arg file "$(basename "$1")" '{public:false,files:{($file):{content:.}}}' "$1" \
+	| curl -sSf -X POST -d@- -u "$(secret show github/gist)" "https://api.github.com/gists" \
+	| jq -r '.files[]|"\(.raw_url)"'

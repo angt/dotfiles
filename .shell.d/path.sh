@@ -1,3 +1,4 @@
+shell_add_path ~/.bin
 shell_add_path ~/.local/bin
 shell_add_path ~/.local/sbin
 shell_add_path ~/.local/usr/bin
