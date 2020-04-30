@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+cd "$HOME"
+
+git init
+git remote add origin https://github.com/angt/dotfiles
+git fetch --all
+git reset --hard origin/master
+
+echo "exec bash # now :)"
