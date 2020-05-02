@@ -51,6 +51,7 @@ inoremap <S-Tab> <C-V><Tab>
 hi Normal guifg=white guibg=black
 hi SpecialKey ctermfg=4 guifg=#3465a4
 hi NonText    ctermfg=4 guifg=#3465a4
+hi ALEError   ctermbg=none cterm=underline
 
 cmap w!! w !sudo tee % >/dev/null
 map ° /TODO<ENTER>
