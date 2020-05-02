@@ -10,6 +10,7 @@
 .gnupg
 .go
 .goroot
+.lesshst
 .local
 .nimble
 .rustup
@@ -18,5 +19,8 @@
 .ssh/known_hosts
 .subversion
 .tmp
+.vim/.netrwhist
 .vim/plugged
+.viminfo
+.wget-hsts
 .z
