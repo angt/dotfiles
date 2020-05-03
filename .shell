@@ -10,13 +10,18 @@ shell_add_path() {
 	unset f
 }
 
+shell_reload_sh() {
+	[ "$1" ] || return
+	[ -d ~/.shell.d ] || return
+	for f in ~/.shell.d/?*."${1##*/}"; do
+		[ -f "$f" ] && . "$f"
+	done
+}
+
 shell_reload() {
-	if [ -d ~/.shell.d ] ; then
-		for f in ~/.shell.d/?*.sh ; do
-			[ -f "$f" ] && . "$f"
-		done
-		unset f
-	fi
+	shell_add_path ~/.bin
+	shell_reload_sh sh
+	shell_reload_sh "$BASH"
 }
 
 shell_reload

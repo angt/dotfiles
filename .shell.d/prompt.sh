@@ -9,15 +9,15 @@ blu="\\[\\e[34m\\]"
 mgt="\\[\\e[35m\\]"
 wht="\\[\\e[37m\\]"
 
-userStyle="$mgt"
-hostStyle="$blu"
+usr="$mgt"
+hst="$blu"
 
-[ "$USER" == "root" ] && userStyle="$red"
-[ "$SSH_TTY"        ] && hostStyle="$red"
+[ "$USER" = root ] && usr="$red"
+[ "$SSH_TTY"     ] && hst="$red"
 
 PS1="
-$bld$userStyle\\u\
-$wht at $hostStyle\\h\
+$bld$usr\\u\
+$wht at $hst\\h\
 $wht in $grn\\w\
 $wht on $ylw\$(git-ref)
 $wht\$ $rst"

@@ -1,4 +1,4 @@
-command -v vim 2>/dev/null || return
+command -v vim 1>/dev/null 2>/dev/null || return
 
 export VISUAL=vim
 export EDITOR=vim
