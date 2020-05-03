@@ -7,6 +7,8 @@
     smtpServer = smtp.gmail.com
     smtpUser = agallouet@gmail.com
     smtpServerPort = 587
+[credential "smtp://agallouet%40gmail.com@smtp.gmail.com%3a587"]
+    helper = secret gmail/agallouet/git
 [alias]
     st = status -s -uno
     ci = commit
