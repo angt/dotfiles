@@ -16,9 +16,9 @@ hst="$blu"
 [ "$SSH_TTY"     ] && hst="$red"
 
 PS1="
-$bld$usr\\u\
-$wht at $hst\\h\
-$wht in $grn\\w\
+$bld$usr\$USER\
+$wht at $hst\$HOSTNAME\
+$wht in $grn\${PWD##*/}\
 $wht on $ylw\$(git-ref)
 $wht\$ $rst"
 export PS1
