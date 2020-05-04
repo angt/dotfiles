@@ -17,7 +17,7 @@ hst="$blu"
 
 PS1="
 $bld$usr\$USER\
-$wht at $hst\$HOSTNAME\
+$wht at $hst\$(hostname)\
 $wht in $grn\${PWD##*/}\
 $wht on $ylw\$(git-ref)
 $wht\$ $rst"
