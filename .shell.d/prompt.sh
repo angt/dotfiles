@@ -1,27 +1,10 @@
-# Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
-
-bld="\\[\\e[1m\\]"
-rst="\\[\\e[0m\\]"
-red="\\[\\e[31m\\]"
-grn="\\[\\e[32m\\]"
-ylw="\\[\\e[33m\\]"
-blu="\\[\\e[34m\\]"
-mgt="\\[\\e[35m\\]"
-wht="\\[\\e[37m\\]"
-
-usr="$mgt"
-hst="$blu"
-
-[ "$USER" = root ] && usr="$red"
-[ "$SSH_TTY"     ] && hst="$red"
-
-PS1="
-$bld$usr\$USER\
-$wht at $hst\$(hostname)\
-$wht in $grn\${PWD##*/}\
-$wht on $ylw\$(git-ref)
-$wht\$ $rst"
+PS1='
+$(pretty ps1)
+$ '
 export PS1
 
-PS2="$wht> $rst"
+PS2='$(pretty ps2)'
 export PS2
+
+PS4='$(pretty ps4)'
+export PS4

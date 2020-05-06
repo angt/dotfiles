@@ -1,0 +1,64 @@
+#!/bin/sh
+
+_pretty() {
+	case "$1" in
+		bold)    V=1  ;;
+		reset)   V=0  ;;
+		red)     V=31 ;;
+		green)   V=32 ;;
+		yellow)  V=33 ;;
+		blue)    V=34 ;;
+		magenta) V=35 ;;
+		cyan)    V=36 ;;
+		gray)    V=37 ;;
+		*)   return 1 ;;
+	esac
+	shift 1
+	printf '\033[%sm%s' "$V" "$*"
+}
+
+_pretty_user() {
+	case "$USER" in
+		root) _pretty red root ;;
+		*)    _pretty magenta "$USER" ;;
+	esac
+}
+
+_pretty_host() {
+	_pretty gray " at "
+	_pretty blue "$(hostname)"
+}
+
+_pretty_path() {
+	_pretty gray " in "
+	_pretty green "${PWD##*/}"
+}
+
+_pretty_repo() {
+	_pretty gray " on "
+	_pretty yellow "$(git-ref)"
+}
+
+case "$1" in
+	print)
+		shift 1
+		_pretty "$@"
+		;;
+	ps1)
+		_pretty bold
+		_pretty_user
+		_pretty_host
+		_pretty_path
+		_pretty_repo
+		;;
+	ps2)
+		_pretty bold
+		_pretty blue " >> "
+		;;
+	ps4)
+		_pretty bold
+		_pretty red " || "
+		;;
+esac
+
+_pretty reset
