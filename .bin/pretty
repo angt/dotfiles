@@ -30,8 +30,18 @@ _pretty_host() {
 }
 
 _pretty_path() {
+	S='' P="$(pwd)"
+	[ "$HOME" ] && case "$P/" in
+		$HOME/*) S='~' P=${P#$HOME} ;;
+	esac
+	while [ "${#P}" -ge 50 ]; do
+		case "$P" in
+			/*/*/*) P=/…/${P#/*/*/} ;;
+			*) break ;;
+		esac
+	done
 	_pretty gray " in "
-	_pretty green "${PWD##*/}"
+	_pretty green "$S$P"
 }
 
 _pretty_repo() {
