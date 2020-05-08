@@ -24,13 +24,8 @@ _pretty_user() {
 	esac
 }
 
-_pretty_host() {
-	_pretty gray " at "
-	_pretty blue "$(hostname)"
-}
-
 _pretty_path() {
-	S='' P="$(pwd)"
+	S='' P="$1"
 	[ "$HOME" ] && case "$P/" in
 		$HOME/*) S='~' P=${P#$HOME} ;;
 	esac
@@ -40,13 +35,7 @@ _pretty_path() {
 			*) break ;;
 		esac
 	done
-	_pretty gray " in "
 	_pretty green "$S$P"
-}
-
-_pretty_repo() {
-	_pretty gray " on "
-	_pretty yellow "$(git-ref)"
 }
 
 case "$1" in
@@ -57,9 +46,12 @@ case "$1" in
 	ps1)
 		_pretty bold
 		_pretty_user
-		_pretty_host
-		_pretty_path
-		_pretty_repo
+		_pretty gray " at "
+		_pretty blue "$(hostname)"
+		_pretty gray " in "
+		_pretty_path "$(pwd)"
+		_pretty gray " on "
+		_pretty yellow "$(git-ref)"
 		;;
 	ps2)
 		_pretty bold
