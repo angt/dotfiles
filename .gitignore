@@ -6,10 +6,9 @@
 .*logout
 .cargo
 .choosenim
-.flutter.d
+.deno
 .gnupg
-.go
-.goroot
+.go*
 .lesshst
 .local
 .nimble
