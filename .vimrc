@@ -74,7 +74,7 @@ au BufRead,BufNewFile *.*sh setfiletype sh
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'chrisbra/unicode.vim'
 call plug#end()
