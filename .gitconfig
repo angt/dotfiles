@@ -27,6 +27,9 @@
     outgoing = format-patch -M -n -s -o outgoing
     cleanup = commit -am 'Code cleanup'
     amend = commit --amend --reuse-message=HEAD
+[diff "hex"]
+    textconv = hexdump -v -C
+    binary = true
 [core]
     pager = less -F -X
     editor = vim
