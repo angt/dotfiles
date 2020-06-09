@@ -1,4 +1,4 @@
-VERSION=1.14.2
+VERSION=1.14.4
 OS=$(uname | tr '[:upper:]' '[:lower:]')
 TGZ=go$VERSION.$OS-amd64.tar.gz
 
@@ -11,5 +11,5 @@ shell_add_path "$GOPATH/bin"
 shell_install_go() {
 	rm -rf "$GOROOT"
 	mkdir -p "$GOROOT"
-	curl -sSf "https://dl.google.com/go/$TGZ" | tar xz -C "$GOROOT" --strip-components=1
+	curl -sSf "https://dl.google.com/go/$TGZ" | tar -xzf - -C "$GOROOT" --strip-components=1
 }
