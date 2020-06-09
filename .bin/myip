@@ -1,3 +1,10 @@
 #!/bin/sh
 
-dig +short myip.opendns.com @resolver1.opendns.com || curl ipaddr.ovh
+exec 2>/dev/null
+
+O=4
+case "$1" in ([-]6) O=6;; esac
+
+false \
+	|| curl -sSf"$O" ifconfig.co \
+	|| wget -q"$O"O- ifconfig.co
