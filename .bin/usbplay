@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+killall -q timidity || true
+timidity -iA -B2,8 -Os -EFreverb=0 &
+sleep 1
+
+I=$(aconnect -l | awk '/client.*USB/{print $2}')
+O=$(aconnect -l | awk '/client.*TiMidity/{print $2}')
+
+echo "connect $I to $O"
+aconnect "$I"0 "$O"0
+
+wait
