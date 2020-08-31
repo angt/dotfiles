@@ -45,6 +45,7 @@ case "$1" in
 		;;
 	ps1)
 		_pretty bold
+		[ "$SECRET_AGENT" ] && _pretty red "SECRET "
 		_pretty_user
 		_pretty gray " at "
 		_pretty blue "$(hostname)"
