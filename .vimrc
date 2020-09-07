@@ -77,4 +77,5 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'chrisbra/unicode.vim'
+Plug 'ziglang/zig.vim'
 call plug#end()
