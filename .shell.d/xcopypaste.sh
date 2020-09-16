@@ -5,3 +5,7 @@ elif command -v pbcopy >/dev/null; then
 	alias xcopy='pbcopy'
 	alias xpaste='pbpaste'
 fi
+
+xcopysecret() {
+	(sleep 10; xcopy </dev/null) >/dev/null 2>&1 & xcopy
+}
