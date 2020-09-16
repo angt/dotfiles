@@ -9,6 +9,7 @@
 .deno
 .gnupg
 .go*
+.kiss
 .lesshst
 .local
 .nimble
