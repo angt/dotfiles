@@ -14,11 +14,13 @@ mkdirp=
 symlink=
 mode=755
 
-while getopts Dlm: name ; do
+while getopts Dlm:cs name ; do
 case "$name" in
 D) mkdirp=yes ;;
 l) symlink=yes ;;
 m) mode=$OPTARG ;;
+c) ;;
+s) ;;
 ?) usage ;;
 esac
 done
@@ -55,10 +57,3 @@ chmod "$mode" "$tmp"
 fi
 
 mv -f "$tmp" "$2"
-test -d "$2" && {
-rm -f "$2/$tmp"
-printf "%s: %s is a directory\n" "$0" "$dst" 1>&2
-exit 1
-}
-
-exit 0
