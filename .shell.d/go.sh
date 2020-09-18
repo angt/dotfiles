@@ -5,7 +5,8 @@ export GO111MODULE="on"
 shell_add_path "$GOROOT/bin"
 shell_add_path "$GOPATH/bin"
 
-shell_install_go() {
+shell_install_go() (
+	set -e
 	VERSION=1.15.2
 	OS=$(uname | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
@@ -14,4 +15,4 @@ shell_install_go() {
 	rm -rf "${GOROOT%/go}"
 	mkdir -p "${GOROOT%/go}"
 	curl -sSf "https://dl.google.com/go/$TGZ" | tar -xzf - -C "${GOROOT%/go}"
-}
+)
