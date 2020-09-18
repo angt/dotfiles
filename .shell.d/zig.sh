@@ -1,4 +1,5 @@
 shell_install_zig() (
+	set -e
 	VERSION=0.6.0
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
