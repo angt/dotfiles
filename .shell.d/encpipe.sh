@@ -1,8 +1,8 @@
-shell_install_encpipe() {
+shell_install_encpipe() (
+	set -e
 	mkdir -p ~/.tmp
-	cd ~/.tmp || return
+	cd ~/.tmp
 	rm -rf encpipe
 	git clone https://github.com/jedisct1/encpipe --recursive
-	cd encpipe || return
-	make PREFIX=~/.local install
-}
+	make -C encpipe PREFIX=~/.local install
+)
