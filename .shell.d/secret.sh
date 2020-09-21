@@ -4,5 +4,10 @@ shell_install_secret() (
 	cd ~/.tmp
 	rm -rf secret
 	git clone https://github.com/angt/secret -b totp --recursive
-	make -C secret CFLAGS="-Wall -O2 -march=native -static" DESTDIR=~/.local prefix=/usr install
+	CFLAGS="-Wall -O2 -march=native"
+	case "$(uname -s)" in
+		Darwin) ;;
+		*) CFLAGS="$CFLAGS -static"
+	esac
+	make -C secret CFLAGS="$CFLAGS" DESTDIR=~/.local prefix=/usr install
 )
