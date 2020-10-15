@@ -1,0 +1,3 @@
+function completion/glorytun {
+	command -f completion//reexecute argz
+}

@@ -6,7 +6,7 @@ _argz() {
 	local last opts
 	last="${COMP_WORDS[COMP_CWORD]}"
 	COMP_WORDS[COMP_CWORD]="help"
-	opts="$("${COMP_WORDS[@]}" 2>/dev/null | awk '{print $1}' )"
+	opts="$("${COMP_WORDS[@]}" 2>/dev/null | awk '!/^#/{print $1}')"
 	case "$opts" in
 		'') ;;
 		CMD)  _argz_reply < <(compgen -A command -- "$last") ;;
