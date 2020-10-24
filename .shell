@@ -10,6 +10,16 @@ shell_add_path() {
 	unset f
 }
 
+shell_add_manpath() {
+	mkdir -p "$1" || return
+	f=$(cd "$1" && pwd)
+	case ":$MANPATH:" in
+		*":$f:"*) :;;
+		*) export MANPATH="$f:$MANPATH";;
+	esac
+	unset f
+}
+
 shell_reload_sh() {
 	[ "$1" ] || return
 	[ -d ~/.shell.d ] || return
