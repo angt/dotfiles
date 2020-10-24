@@ -5,7 +5,7 @@ shell_add_path() {
 	f=$(cd "$1" && pwd)
 	case ":$PATH:" in
 		*":$f:"*) :;;
-		*) export PATH="$f:$PATH";;
+		*) export PATH="$f${PATH:+:$PATH}";;
 	esac
 	unset f
 }
@@ -15,7 +15,7 @@ shell_add_manpath() {
 	f=$(cd "$1" && pwd)
 	case ":$MANPATH:" in
 		*":$f:"*) :;;
-		*) export MANPATH="$f:$MANPATH";;
+		*) export MANPATH="$f${MANPATH:+:$MANPATH}";;
 	esac
 	unset f
 }
@@ -29,7 +29,15 @@ shell_reload_sh() {
 }
 
 shell_reload() {
+	shell_add_path /sbin
+	shell_add_path /bin
+	shell_add_path /usr/sbin
+	shell_add_path /usr/bin
+	shell_add_path /usr/local/sbin
+	shell_add_path /usr/local/bin
 	shell_add_path ~/.bin
+	shell_add_manpath /usr/share/man
+	shell_add_manpath /usr/local/share/man
 	shell_reload_sh sh
 	shell_reload_sh "$BASH"
 	shell_reload_sh "${YASH_VERSION+yash}"
