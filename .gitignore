@@ -4,6 +4,7 @@
 .*cache
 .*history
 .*logout
+.brew
 .cargo
 .choosenim
 .deno
