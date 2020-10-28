@@ -1,7 +1,7 @@
 #!/bin/sh
 
 shell_add_path() {
-	mkdir -p "$1" || return
+	mkdir -p "$1" 2>/dev/null || return
 	f=$(cd "$1" && pwd)
 	case ":$PATH:" in
 		*":$f:"*) :;;
@@ -11,7 +11,7 @@ shell_add_path() {
 }
 
 shell_add_manpath() {
-	mkdir -p "$1" || return
+	mkdir -p "$1" 2>/dev/null || return
 	f=$(cd "$1" && pwd)
 	case ":$MANPATH:" in
 		*":$f:"*) :;;
