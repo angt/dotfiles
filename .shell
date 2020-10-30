@@ -29,15 +29,9 @@ shell_reload_sh() {
 }
 
 shell_reload() {
-	shell_add_path /sbin
-	shell_add_path /bin
-	shell_add_path /usr/sbin
-	shell_add_path /usr/bin
-	shell_add_path /usr/local/sbin
-	shell_add_path /usr/local/bin
+	export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+	export MANPATH="/usr/share/man:/usr/local/share/man"
 	shell_add_path ~/.bin
-	shell_add_manpath /usr/share/man
-	shell_add_manpath /usr/local/share/man
 	shell_reload_sh sh
 	shell_reload_sh "$BASH"
 	shell_reload_sh "${YASH_VERSION+yash}"
