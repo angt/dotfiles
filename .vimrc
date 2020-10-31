@@ -79,4 +79,5 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'ziglang/zig.vim'
+Plug 'whiteinge/diffconflicts'
 call plug#end()
