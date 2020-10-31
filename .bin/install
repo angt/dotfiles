@@ -1,19 +1,22 @@
 #!/bin/sh
 
-CMD="$(which -a install | sed -n 2p)"
 MKD=
 DST=
+CMD="$(which -a install | sed -n 2p)"
 
+[ "$CMD" ] || {
+	echo "Real install not found!" >&2
+	exit 1
+}
 for arg; do
 	case "$arg" in
-		-D)   MKD=1; continue;;
+		-D)   MKD=1; arg= ;;
 		-*D*) MKD=1; arg="${arg%%D*}${arg##-*D}";;
-		-*)   ;;
 		*/*)  DST="$arg";;
 	esac
-	CMD="$CMD \"$arg\""
+	shift 1
+	[ "$arg" ] && set -- "$@" "$arg"
 done
-
 [ "$MKD" ] && [ "$DST" ] && (umask 022; mkdir -p "${DST%/*}")
 
-exec $CMD
+exec "$CMD" "$@"
