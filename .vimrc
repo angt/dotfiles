@@ -46,6 +46,8 @@ set nobackup
 set nowb
 set noswapfile
 
+set updatetime=300
+
 inoremap <S-Tab> <C-V><Tab>
 
 hi Normal guifg=white guibg=black
@@ -55,6 +57,12 @@ hi ALEError   ctermbg=none cterm=underline
 
 cmap w!! w !sudo tee % >/dev/null
 map ° /TODO<ENTER>
+
+if has("patch-8.1.1564")
+    set signcolumn=number
+else
+    set signcolumn=yes
+endif
 
 syntax on
 let c_no_curly_error=1
