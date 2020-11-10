@@ -1,6 +1,6 @@
 shell_install_zig() (
 	set -e
-	VERSION=0.6.0
+	VERSION=0.7.0
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
 	[ "$OS"  = darwin ] && OS=macos
