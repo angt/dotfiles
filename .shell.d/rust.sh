@@ -1,5 +1,9 @@
 shell_add_path ~/.cargo/bin
 
 shell_install_rustup() {
-	curl -sSf https://sh.rustup.rs | sh -s -- --no-modify-path
+	if command -v rustup >/dev/null; then
+		rustup update
+	else
+		curl -sSf https://sh.rustup.rs | sh -s -- --no-modify-path
+	fi
 }
