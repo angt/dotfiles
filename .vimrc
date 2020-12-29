@@ -48,6 +48,8 @@ set noswapfile
 
 set updatetime=300
 
+set laststatus=2
+
 inoremap <S-Tab> <C-V><Tab>
 
 hi Normal guifg=white guibg=black
