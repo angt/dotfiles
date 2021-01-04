@@ -47,8 +47,10 @@ set nowb
 set noswapfile
 
 set updatetime=300
-
 set laststatus=2
+
+set nojs
+set textwidth=72
 
 inoremap <S-Tab> <C-V><Tab>
 
