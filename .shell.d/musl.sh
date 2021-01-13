@@ -5,9 +5,9 @@ shell_install_musl() (
 	rm -rf musl-cross-make
 	git clone https://github.com/richfelker/musl-cross-make
 	cd musl-cross-make
-	{	command -v curl    && echo "DL_CMD=curl -C - -L -o"
-		command -v shasuml && echo "SHA1_CMD=shasum -a 1 -c"
-	} 2>/dev/null > config.mk
+	{	command -v curl   >&2 && echo "DL_CMD=curl -C - -L -o"
+		command -v shasum >&2 && echo "SHA1_CMD=shasum -a 1 -c"
+	} 2>/dev/null >config.mak
 	for i in {x86_64,i686}-linux-musl     \
 		     aarch64{,_be}-linux-musl     \
 		     arm{,eb}-linux-musleabi{,hf} \
