@@ -11,6 +11,7 @@ shell_install_musl() (
 	for i in {x86_64,i686}-linux-musl     \
 		     aarch64{,_be}-linux-musl     \
 		     arm{,eb}-linux-musleabi{,hf} \
+		     riscv64-linux-musl           \
 		     mips64{,el}-linux-musl{,n32}{,sf}
 		do make -j TARGET=$i OUTPUT=~/.local/usr install
 	done
