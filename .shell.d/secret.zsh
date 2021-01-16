@@ -1,0 +1,1 @@
+compdef _argz secret

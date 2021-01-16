@@ -1,8 +1,5 @@
-autoload -U +X compinit && compinit
-autoload -U colors && colors
-autoload -U bashcompinit && bashcompinit
-setopt prompt_subst
+umask 022
 
-. ~/.shell
-. ~/.shell.d/argz.bash
-. ~/.shell.d/secret.bash
+case "$-" in
+*i*) . ~/.shell
+esac

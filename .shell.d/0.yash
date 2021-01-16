@@ -1,0 +1,6 @@
+set --brace-expand
+set --extended-glob
+set --no-clobber
+
+SHELL=$(command -v yash)
+export SHELL

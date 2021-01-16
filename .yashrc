@@ -1,8 +1,5 @@
-set --brace-expand
-set --extended-glob
-set --no-clobber
+umask 022
 
-SHELL=$(command -v yash)
-export SHELL
-
-. ~/.shell
+case "$-" in
+*i*) . ~/.shell
+esac
