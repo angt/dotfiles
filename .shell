@@ -36,6 +36,7 @@ shell_reload() {
 	shell_reload_sh "$BASH"
 	shell_reload_sh "${YASH_VERSION+yash}"
 	shell_reload_sh "${ZSH_VERSION+zsh}"
+	shell_reload_sh "${KSH_VERSION+ksh}"
 }
 
 shell_reload
