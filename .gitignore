@@ -23,6 +23,7 @@
 .vim/.netrwhist
 .vim/plugged
 .viminfo
+.wasmer
 .wget-hsts
 .z
 .zig
