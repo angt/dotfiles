@@ -6,6 +6,7 @@ set clipboard=unnamed
 
 set title
 set number
+set relativenumber
 set ruler
 set hidden
 
