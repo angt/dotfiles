@@ -1,3 +1,3 @@
 shell_install_ww() {
-	go get webwormhole.io/cmd/ww
+	go install webwormhole.io/cmd/ww@latest
 }
