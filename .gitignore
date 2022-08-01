@@ -32,7 +32,6 @@
 .tmp
 .vim/.netrwhist
 .vim/plugged
-.viminfo
 .wasmer
 .wget-hsts
 .yarnrc

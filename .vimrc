@@ -46,6 +46,7 @@ set scrolloff=16
 set nobackup
 set nowb
 set noswapfile
+set viminfo=
 
 set updatetime=300
 set laststatus=2
