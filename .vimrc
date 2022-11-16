@@ -79,6 +79,7 @@ let g:is_posix = 1
 let g:ctrlp_map = '<c-p>'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_c_clangtidy_checks = []
+let g:ale_c_parse_makefile = 1
 
 au FileType lua,yaml setl sw=2 sts=2 ts=2 et
 au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml foldmethod=indent
@@ -89,6 +90,9 @@ au BufRead,BufNewFile OTKfile setfiletype sh
 
 au FileType text,markdown setl tw=72
 au BufRead,BufNewFile *.md set filetype=markdown
+
+map à :ALENextWrap <CR>
+map ç :ALEPreviousWrap <CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
