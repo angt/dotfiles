@@ -2,7 +2,7 @@ shell_install_shellcheck() (
 	set -e
 	mkdir -p ~/.tmp
 	cd ~/.tmp
-	V="v0.8.0"
+	V="v0.9.0"
 	OS="$(uname | tr '[:upper:]' '[:lower:]')"
 	URL="https://github.com/koalaman/shellcheck/releases/download/$V/shellcheck-$V.$OS.x86_64.tar.xz"
 	case "$(uname -m)" in
