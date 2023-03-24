@@ -3,7 +3,7 @@ shell_install_secret() (
 	mkdir -p ~/.tmp
 	cd ~/.tmp
 	rm -rf secret
-	git clone https://github.com/angt/secret -b totp --recursive
+	git clone https://github.com/angt/secret --recursive
 	EXTRA=
 	case "$(uname -s)" in
 		Darwin) ;;
