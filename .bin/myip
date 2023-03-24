@@ -2,9 +2,10 @@
 
 exec 2>/dev/null
 
-O=4
-case "$1" in ([-]6) O=6;; esac
-
-false \
-	|| curl -sSf"$O" ifconfig.co \
-	|| wget -q"$O"O- ifconfig.co
+if command -v curl >&2; then
+	curl "$@" -sSf ifconfig.ovh
+elif command -v wget >&2; then
+	wget "$@" -qO- ifconfig.ovh
+else
+	echo "Install curl or wget"
+fi
