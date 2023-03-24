@@ -6,3 +6,5 @@ find ~/.ssh -exec grep -sq 'PRIVATE KEY' {} \; -and -exec chmod 400 {} \;
 		. ~/.ssh-agent
 	fi
 } >/dev/null 2>/dev/null
+
+[ -f ~/.ssh/authorized_keys ] || cp ~/.ssh/id_ed25519.pub  ~/.ssh/authorized_keys
