@@ -37,6 +37,7 @@ shell_reload() {
 	shell_reload_sh "${YASH_VERSION+yash}"
 	shell_reload_sh "${ZSH_VERSION+zsh}"
 	shell_reload_sh "${KSH_VERSION+ksh}"
+	[ -f ~/.local.sh ] && . ~/.local.sh
 }
 
 shell_reload
