@@ -7,7 +7,7 @@ shell_add_path "$GOPATH/bin"
 
 shell_install_go() (
 	set -e
-	VERSION=1.20.5
+	VERSION=1.20.7
 	OS=$(uname | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
 	[ "$ARCH" = x86_64 ] && ARCH=amd64

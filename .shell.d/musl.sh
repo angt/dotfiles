@@ -7,6 +7,7 @@ shell_install_musl() (
 	cd musl-cross-make
 	{	command -v curl   >&2 && echo "DL_CMD=curl -C - -L -o"
 		command -v shasum >&2 && echo "SHA1_CMD=shasum -a 1 -c"
+		echo "GCC_VER =  11.2.0"
 	} 2>/dev/null >config.mak
 	for i in {x86_64,i686}-linux-musl     \
 		     aarch64{,_be}-linux-musl     \
