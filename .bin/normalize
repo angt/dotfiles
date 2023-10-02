@@ -1,13 +1,7 @@
 #!/bin/sh
 
-[ -r "$1" ] || exit
-
-D=$(printf "%s" "$1" \
+printf "%s-" "$@" \
 	| iconv -c -t ASCII//TRANSLIT//IGNORE \
 	| tr -c '[[:alnum:]]._' '-' \
-	| tr '[:upper:]' '[:lower:]')
-
-[ "$D" ] || exit
-
-echo " -> $D"
-cp -- "$1" "$D"
+	| tr '[:upper:]' '[:lower:]' \
+	| sed 's/-\{2,\}/-/g; s/^-*//; s/-*$//'
