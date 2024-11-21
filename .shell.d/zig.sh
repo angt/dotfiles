@@ -1,10 +1,13 @@
 shell_install_zig() (
 	set -e
-	VERSION=0.11.0
+	VERSION=0.13.0
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
 	[ "$OS"  = darwin ] && OS=macos
-	[ "$ARCH" = amd64 ] && ARCH=x86_64
+	case "$ARCH" in
+	(amd64) ARCH=x86_64 ;;
+	(arm64) ARCH=aarch64 ;;
+	esac
 	NAME=zig-$OS-$ARCH-$VERSION
 	mkdir -p ~/.zig ~/.local/bin ~/.local/lib
 	rm -rf ~/.zig/$NAME
