@@ -2,13 +2,13 @@ shell_install_shellcheck() (
 	set -e
 	mkdir -p ~/.tmp
 	cd ~/.tmp
-	V="v0.9.0"
+	V="v0.10.0"
 	OS="$(uname | tr '[:upper:]' '[:lower:]')"
-	URL="https://github.com/koalaman/shellcheck/releases/download/$V/shellcheck-$V.$OS.x86_64.tar.xz"
-	case "$(uname -m)" in
-	(x86_64) ;;
-	(*) echo "Arch not supported"; exit 1;;
+	ARCH="$(uname -m)"
+	case "$ARCH" in
+	(arm64) ARCH=aarch64 ;;
 	esac
+	URL="https://github.com/koalaman/shellcheck/releases/download/$V/shellcheck-$V.$OS.$ARCH.tar.xz"
 	curl -sSf "$URL" | tar -xJf -
 	mv -f "shellcheck-$V/shellcheck" "$HOME/.local/bin"
 )
