@@ -6,6 +6,7 @@ shell_install_shellcheck() (
 	OS="$(uname | tr '[:upper:]' '[:lower:]')"
 	ARCH="$(uname -m)"
 	case "$ARCH" in
+	(amd64) ARCH=x86_64 ;;
 	(arm64) ARCH=aarch64 ;;
 	esac
 	URL="https://github.com/koalaman/shellcheck/releases/download/$V/shellcheck-$V.$OS.$ARCH.tar.xz"
