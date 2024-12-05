@@ -10,7 +10,10 @@ shell_install_go() (
 	VERSION=1.23.3
 	OS=$(uname | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
-	[ "$ARCH" = x86_64 ] && ARCH=amd64
+	case "$ARCH" in
+	(x86_64)  ARCH=amd64 ;;
+	(aarch64) ARCH=arm64 ;;
+	esac
 	TGZ=go$VERSION.$OS-$ARCH.tar.gz
 	rm -rf "${GOROOT%/go}"
 	mkdir -p "${GOROOT%/go}"
