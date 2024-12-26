@@ -1,4 +1,5 @@
 shell_add_path ~/.local/vim/bin
+shell_add_manpath ~/.local/vim/share/man
 
 shell_install_vim() (
 	set -e

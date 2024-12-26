@@ -55,5 +55,3 @@
     trustExitCode = true
 [mergetool]
     keepBackup = false
-[commit]
-    cleanup = verbatim
