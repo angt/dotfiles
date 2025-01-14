@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -- pip "$@"
+command -v uv >/dev/null && set -- uv "$@"
+exec "$@"
