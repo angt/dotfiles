@@ -20,7 +20,8 @@
 .deno
 .duckdb
 .gnupg
-.go*
+.go
+.goroot
 .irssi
 .kiss
 .lesshst

@@ -1,4 +1,3 @@
-
 shell_install_bun() (
 	set -e
 	mkdir -p ~/.tmp
