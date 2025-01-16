@@ -37,6 +37,7 @@
 .ssh/known_hosts
 .subversion
 .sudo_as_admin_successful
+.terminfo
 .thumbnails
 .tmp
 .vim/.netrwhist
