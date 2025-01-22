@@ -6,9 +6,10 @@ shell_add_path ~/.local/usr/sbin
 shell_add_manpath ~/.local/usr/man
 shell_add_manpath ~/.local/usr/share/man
 
+shell_add_lib_path ~/.local/lib
+
 shell_setup_local_dev() {
 	export PKG_CONFIG_PATH=~/.local/lib/pkgconfig
 	export LIBRARY_PATH=~/.local/lib
-	export LD_LIBRARY_PATH=~/.local/lib
 	export CPATH=~/.local/include
 }

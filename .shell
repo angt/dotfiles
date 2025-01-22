@@ -1,21 +1,44 @@
 #!/bin/sh
 
 shell_add_path() {
-	mkdir -p "$1" 2>/dev/null || return
+	mkdir -p "$1" || return
 	f=$(cd "$1" && pwd)
-	case ":$PATH:" in
-		*":$f:"*) :;;
-		*) export PATH="$f${PATH:+:$PATH}";;
+	case ":$PATH:" in (*":$f:"*) ;;
+	(*) export PATH="$f${PATH:+:$PATH}"
 	esac
 	unset f
 }
 
-shell_add_manpath() {
-	mkdir -p "$1" 2>/dev/null || return
+shell_add_ld_library_path() {
+	mkdir -p "$1" || return
 	f=$(cd "$1" && pwd)
-	case ":$MANPATH:" in
-		*":$f:"*) :;;
-		*) export MANPATH="$f${MANPATH:+:$MANPATH}";;
+	case ":$LD_LIBRARY_PATH:" in (*":$f:"*) ;;
+	(*) export LD_LIBRARY_PATH="$f${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+	esac
+	unset f
+}
+
+shell_add_dyld_library_path() {
+	mkdir -p "$1" || return
+	f=$(cd "$1" && pwd)
+	case ":$DYLD_LIBRARY_PATH:" in (*":$f:"*) ;;
+	(*) export DYLD_LIBRARY_PATH="$f${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
+	esac
+	unset f
+}
+
+shell_add_lib_path() {
+	case "$(uname -s)" in
+	(Darwin) shell_add_dyld_library_path "$@" ;;
+	(Linux) shell_add_ld_library_path "$@" ;;
+	esac
+}
+
+shell_add_manpath() {
+	mkdir -p "$1" || return
+	f=$(cd "$1" && pwd)
+	case ":$MANPATH:" in (*":$f:"*) ;;
+	(*) export MANPATH="$f${MANPATH:+:$MANPATH}"
 	esac
 	unset f
 }
@@ -31,6 +54,7 @@ shell_reload_sh() {
 shell_reload() {
 	export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 	export MANPATH="/usr/share/man:/usr/local/share/man"
+	unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH
 	shell_add_path ~/.bin
 	shell_reload_sh sh
 	shell_reload_sh "$BASH"
