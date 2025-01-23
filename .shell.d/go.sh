@@ -8,16 +8,16 @@ shell_setup_go() {
 }
 
 shell_install_go() {
+	[ "$1" ] || set -- "1.23.5"
 	(
 		set -e
-		VERSION=1.23.3
 		OS=$(uname | tr '[:upper:]' '[:lower:]')
 		ARCH=$(uname -m)
 		case "$ARCH" in
 		(x86_64)  ARCH=amd64 ;;
 		(aarch64) ARCH=arm64 ;;
 		esac
-		TGZ=go$VERSION.$OS-$ARCH.tar.gz
+		TGZ=go$1.$OS-$ARCH.tar.gz
 		rm -rf ~/.goroot
 		mkdir -p ~/.goroot
 		curl -sSf "https://dl.google.com/go/$TGZ" |
