@@ -89,6 +89,7 @@ au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml foldmethod=indent
 au FileType sh setl sw=4 sts=4 ts=4 noet
 au BufRead,BufNewFile *.*sh setfiletype sh
 au BufRead,BufNewFile OTKfile setfiletype sh
+au BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 
 au FileType text,markdown setl tw=72
 au BufRead,BufNewFile *.md set filetype=markdown
