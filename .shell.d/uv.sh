@@ -13,7 +13,7 @@ shell_setup_uv() {
 
 shell_install_uv() {
 	curl -LsSf https://astral.sh/uv/install.sh | sh &&
-	UV_PYTHON_PREFERENCE=only-managed uv venv ~/.venv &&
+	UV_PYTHON_PREFERENCE=only-managed uv venv "$@" ~/.venv &&
 	shell_setup_uv
 }
 

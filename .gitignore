@@ -31,6 +31,7 @@
 /.matplotlib
 /.nimble
 /.npm
+/.python-version
 /.rustup
 /.ssh-agent
 /.ssh/authorized_keys
