@@ -81,7 +81,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_c_clangtidy_checks = []
 let g:ale_c_parse_makefile = 1
 
-autocmd VimEnter * let g:llama_config['show_info']=0
+let g:llama_config = { 'show_info': 0 }
 
 au FileType lua,yaml setl sw=2 sts=2 ts=2 et
 au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml foldmethod=indent
