@@ -1,6 +1,7 @@
 [user]
     name = Adrien Gallouët
     email = adrien@gallouet.fr
+    signingkey = ~/.ssh/id_ed25519.pub
 [sendemail]
     from = Adrien Gallouët <adrien@gallouet.fr>
     smtpEncryption = tls
@@ -55,3 +56,7 @@
     trustExitCode = true
 [mergetool]
     keepBackup = false
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
