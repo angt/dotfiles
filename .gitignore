@@ -29,6 +29,7 @@
 /.local
 /.local.sh
 /.matplotlib
+/.model.gguf
 /.nimble
 /.npm
 /.python-version
