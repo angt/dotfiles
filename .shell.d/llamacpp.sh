@@ -13,11 +13,6 @@ shell_install_llamacpp() (
 )
 
 shell_setup_llamacpp() {
-	[ -e ~/.model.gguf ] ||
-		curl -sSf 'https://hf.co/ggml-org/Qwen2.5-Coder-7B-Q8_0-GGUF/resolve/main/qwen2.5-coder-7b-q8_0.gguf?download=true' \
-			-o ~/.model.gguf
-	llama-server \
-		-m ~/.model.gguf \
-		--port 8012 -fa -ub 1024 -b 1024 \
-		--ctx-size 0 --cache-reuse 256
+	tmux new-session -d -s llamacpp &&
+	tmux send-keys -t llamacpp llamacpp C-m
 }
