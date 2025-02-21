@@ -3,7 +3,7 @@ shell_install_llamacpp() (
 	mkdir -p ~/.tmp
 	cd ~/.tmp
 	rm -rf llama.cpp
-	git clone --depth 1 https://github.com/ggerganov/llama.cpp
+	git clone --depth 1 https://github.com/ggml-org/llama.cpp
 	cd llama.cpp
 	cmake -B build \
 		-DCMAKE_INSTALL_PREFIX="$HOME/.local" \
