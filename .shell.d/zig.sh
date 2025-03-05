@@ -5,7 +5,7 @@ shell_setup_zig() {
 }
 
 shell_install_zig() {
-	[ "$1" ] || set -- "0.13.0"
+	[ "$1" ] || set -- "0.14.0"
 	[ -e ~/zig/"$1" ] || (
 		set -e
 		OS=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -21,10 +21,11 @@ shell_install_zig() {
 		(*)       DIR="download/$1" ;;
 		esac
 		mkdir -p ~/.zig
+		rm -rf ~/.zig/"$NAME" ~/.zig/"$1"
 		curl -sS \
 			-f "https://ziglang.org/$DIR/$NAME.tar.xz" \
 			-f "https://pkg.machengine.org/zig/$NAME.tar.xz" |
-				tar -Jxf- -C ~/.zig
+				tar -Jxf- -C ~/.zig &&
 		mv ~/.zig/"$NAME" ~/.zig/"$1"
 	)
 	shell_setup_zig "$1"
