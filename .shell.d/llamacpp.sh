@@ -6,6 +6,7 @@ shell_install_llamacpp() (
 	git clone --depth 1 https://github.com/ggml-org/llama.cpp
 	cd llama.cpp
 	cmake -B build \
+		-DLLAMA_CURL=ON \
 		-DCMAKE_INSTALL_PREFIX="$HOME/.local" \
 		-DCMAKE_INSTALL_LIBDIR="$HOME/.local/lib"
 	cmake --build build --config Release -j
@@ -14,5 +15,5 @@ shell_install_llamacpp() (
 
 shell_setup_llamacpp() {
 	tmux new-session -d -s llamacpp &&
-	tmux send-keys -t llamacpp llamacpp C-m
+	tmux send-keys -t llamacpp 'llama-server --fim-qwen-14b-spec' C-m
 }
