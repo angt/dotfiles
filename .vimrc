@@ -55,6 +55,10 @@ set nojs
 
 inoremap <S-Tab> <C-V><Tab>
 
+digraph NN 8239 " u202f
+digraph -- 8212 " u2014
+digraph *3 8258 " u2042
+
 hi Normal guifg=white guibg=black
 hi SpecialKey ctermfg=4 guifg=#3465a4
 hi NonText    ctermfg=4 guifg=#3465a4
@@ -91,7 +95,7 @@ au BufRead,BufNewFile *.*sh setfiletype sh
 au BufRead,BufNewFile OTKfile setfiletype sh
 au BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 
-au FileType text,markdown setl tw=72
+au FileType text,markdown,typst setl tw=72
 au BufRead,BufNewFile *.md set filetype=markdown
 
 map à :ALENextWrap <CR>
@@ -103,7 +107,6 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'chrisbra/unicode.vim'
 Plug 'ziglang/zig.vim'
 Plug 'whiteinge/diffconflicts'
 call plug#end()
