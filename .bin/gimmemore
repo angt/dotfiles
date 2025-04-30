@@ -1,0 +1,16 @@
+#!/bin/sh
+
+sudo sh <<EOF
+umask 077
+swapoff /swap
+dd \
+	if=/dev/zero  \
+	of=/swap      \
+	bs=1G         \
+	count=${1:-1} \
+	oflag=append  \
+	conv=notrunc  \
+	status=progress
+mkswap /swap
+swapon /swap
+EOF
