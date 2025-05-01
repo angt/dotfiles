@@ -88,8 +88,6 @@ let g:ale_c_parse_makefile = 1
 let g:llama_config = { 'show_info': 0 }
 
 au FileType lua,yaml setl sw=2 sts=2 ts=2 et
-au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml foldmethod=indent
-
 au FileType sh setl sw=4 sts=4 ts=4 noet
 au BufRead,BufNewFile *.*sh setfiletype sh
 au BufRead,BufNewFile OTKfile setfiletype sh
