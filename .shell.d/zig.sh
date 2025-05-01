@@ -7,10 +7,9 @@ shell_setup_zig() {
 shell_install_zig() {
 	[ "$1" ] || set -- "0.14.0"
 	[ -e ~/zig/"$1" ] || (
-		set -e
 		OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 		ARCH=$(uname -m)
-		[ "$OS"  = darwin ] && OS=macos
+		[ "$OS" = darwin ] && OS=macos
 		case "$ARCH" in
 		(amd64) ARCH=x86_64 ;;
 		(arm64) ARCH=aarch64 ;;
