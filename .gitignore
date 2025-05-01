@@ -34,7 +34,6 @@
 /.npm
 /.python-version
 /.rustup
-/.ssh-agent
 /.ssh
 /.subversion
 /.sudo_as_admin_successful

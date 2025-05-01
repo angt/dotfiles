@@ -2,11 +2,11 @@
 
 shell_ssh_agent() {
 	test -S "$SSH_AUTH_SOCK" && return
-	[ -f ~/.ssh-agent ] && . ~/.ssh-agent
+	[ -f ~/.ssh/agent ] && . ~/.ssh/agent
 	test -S "$SSH_AUTH_SOCK" && kill -0 "$SSH_AGENT_PID" 2>/dev/null && return
-	ssh-agent > ~/.ssh-agent
-	chmod 600 ~/.ssh-agent
-	. ~/.ssh-agent
+	ssh-agent > ~/.ssh/agent
+	chmod 600 ~/.ssh/agent
+	. ~/.ssh/agent
 }
 
 shell_ssh_host_is_valid() {
