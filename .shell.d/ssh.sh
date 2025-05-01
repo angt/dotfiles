@@ -1,11 +1,5 @@
 # shellcheck disable=1090
 
-find ~/.ssh \
-	-type f \
-	-exec grep -sq 'PRIVATE KEY' {} \; \
-	-and \
-	-exec chmod 400 {} \;
-
 shell_ssh_agent() {
 	test -S "$SSH_AUTH_SOCK" && return
 	[ -f ~/.ssh-agent ] && . ~/.ssh-agent
@@ -43,7 +37,7 @@ shell_ssh_host_add() {
 	} >> ~/.ssh/config
 }
 
-shell_ssh_agent
+mkdir -p ~/.ssh
+[ -f ~/.ssh/config ] || :> ~/.ssh/config
 
-[ -f ~/.ssh/config          ] || :> ~/.ssh/config
-[ -f ~/.ssh/authorized_keys ] || cp ~/.ssh/id_ed25519.pub  ~/.ssh/authorized_keys
+shell_ssh_agent
