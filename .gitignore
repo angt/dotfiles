@@ -35,9 +35,7 @@
 /.python-version
 /.rustup
 /.ssh-agent
-/.ssh/authorized_keys
-/.ssh/config
-/.ssh/known_hosts
+/.ssh
 /.subversion
 /.sudo_as_admin_successful
 /.terminfo
