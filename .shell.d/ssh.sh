@@ -24,6 +24,10 @@ shell_ssh_host_rm() {
 	mv ~/.ssh/config.new ~/.ssh/config
 }
 
+shell_ssh_host_addr() {
+	ssh -G "$@" 2>/dev/null | sed -n 's/^hostname //p'
+}
+
 shell_ssh_host_add() {
 	shell_ssh_host_is_valid "$1" || return
 	shell_ssh_host_exists   "$1" || {
