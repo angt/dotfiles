@@ -28,6 +28,13 @@ shell_ssh_host_addr() {
 	ssh -G "$@" 2>/dev/null | sed -n 's/^hostname //p'
 }
 
+shell_ssh_pubkey() {
+	if [ "$1" ]
+	then ssh-add -L | grep -s -- "$1"
+	else ssh-add -L
+	fi
+}
+
 shell_ssh_host_add() {
 	shell_ssh_host_is_valid "$1" || return
 	shell_ssh_host_exists   "$1" || {
