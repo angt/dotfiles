@@ -13,3 +13,9 @@ shell_setup_local_dev() {
 	export LIBRARY_PATH=~/.local/lib
 	export CPATH=~/.local/include
 }
+
+shell_cleanup_local_dev() {
+	unset PKG_CONFIG_PATH LIBRARY_PATH CPATH
+}
+
+shell_setup_local_dev
