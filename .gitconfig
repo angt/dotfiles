@@ -41,6 +41,8 @@
     insteadOf = gl:
 [url "git@github.com:"]
     insteadOf = gh:
+[url "git@hf.co:"]
+    insteadOf = hf:
 [url "https://gitlab.com/"]
     insteadOf = glh:
 [url "https://github.com/"]
