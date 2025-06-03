@@ -8,7 +8,7 @@ shell_setup_go() {
 }
 
 shell_install_go() {
-	[ "$1" ] || set -- "1.24.0"
+	[ "$1" ] || set -- "1.24.3"
 	(
 		set -e
 		OS=$(uname | tr '[:upper:]' '[:lower:]')
