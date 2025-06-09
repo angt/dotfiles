@@ -1,7 +1,6 @@
 shell_install_bun() (
-	set -e
 	mkdir -p ~/.tmp
-	cd ~/.tmp
+	cd ~/.tmp || return
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
 	case "$ARCH" in
@@ -14,8 +13,10 @@ shell_install_bun() (
 	(arm64) ARCH=aarch64 ;;
 	esac
 	NAME="bun-$OS-$ARCH"
-	URL="https://github.com/oven-sh/bun/releases/latest/download"
-	curl -OsSfL "$URL/$NAME.zip"
-	unzip -oq "$NAME.zip"
-	mv "$NAME/bun" ~/.local/bin/bun
+	curl -OsSfL "https://github.com/oven-sh/bun/releases/latest/download/$NAME.zip" &&
+	unzip -oq "$NAME.zip" &&
+	mv "$NAME/bun" ~/.local/bin/bun &&
+	ln -sf ~/.local/bin/bun ~/.local/bin/node
 )
+
+shell_add_path ~/.bun/bin
