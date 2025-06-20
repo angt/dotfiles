@@ -49,6 +49,12 @@ shell_ssh_host_add() {
 }
 
 mkdir -p ~/.ssh
-[ -f ~/.ssh/config ] || :> ~/.ssh/config
+chmod 700 ~/.ssh
+
+[ -f ~/.ssh/config          ] || touch ~/.ssh/config
+[ -f ~/.ssh/authorized_keys ] ||
+	echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArbSYP0EYqQQnBuIoTGvNUcOA5TJGdsDUMLg/OSt2zv angt" > ~/.ssh/authorized_keys
+
+chmod 600 ~/.ssh/config ~/.ssh/authorized_keys
 
 shell_ssh_agent
