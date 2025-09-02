@@ -5,7 +5,7 @@ shell_setup_zig() {
 }
 
 shell_install_zig() {
-	[ "$1" ] || set -- "0.14.1"
+	[ "$1" ] || set -- "0.15.1"
 	[ -e ~/zig/"$1" ] || (
 		OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 		ARCH=$(uname -m)
