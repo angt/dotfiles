@@ -103,6 +103,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ggml-org/llama.vim'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
