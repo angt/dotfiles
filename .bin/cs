@@ -1,0 +1,21 @@
+#!/bin/sh
+
+[ -d ~/.clipboard ] ||
+	git clone -q gh:angt/.clipboard ~/.clipboard ||
+	exit
+
+git -C ~/.clipboard fetch -q --depth=1 origin master
+git -C ~/.clipboard reset -q --hard FETCH_HEAD
+
+[ -e ~/.clipboard/.pubkey ] ||
+	ssh-add -L | grep -s -- ' angt$' > ~/.clipboard/.pubkey
+
+passphrase=$(
+	echo mystupidpublicpassphrase |
+	ssh-keygen -Y sign -f ~/.clipboard/.pubkey -n clipboard-key 2>/dev/null
+)
+
+encpipe -e -p "$passphrase" > ~/.clipboard/data
+
+git -C ~/.clipboard commit -qsam update
+git -C ~/.clipboard push -qf origin master
