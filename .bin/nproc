@@ -1,7 +1,5 @@
 #!/bin/sh
 
-command -v nproc >/dev/null && exec nproc "$@"
-
 case "$(uname -s)" in
 (Linux)  grep -c ^processor /proc/cpuinfo ;;
 (Darwin) sysctl -n hw.logicalcpu ;;
