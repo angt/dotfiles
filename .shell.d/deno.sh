@@ -7,4 +7,4 @@ shell_install_deno() {
 	shell_setup_deno
 }
 
-[ -e ~/.deno ] && shell_setup_deno
+[ -e ~/.deno/bin ] && shell_setup_deno
