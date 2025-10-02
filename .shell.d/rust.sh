@@ -10,4 +10,4 @@ shell_install_rust() {
 	shell_setup_rust
 }
 
-[ -e ~/.cargo ] && shell_setup_rust
+[ -e ~/.cargo/bin ] && shell_setup_rust
