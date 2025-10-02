@@ -1,10 +1,9 @@
 shell_install_musl() (
 	set -e
+	rm -rf ~/.tmp/mxm
 	mkdir -p ~/.tmp
-	cd ~/.tmp
-	rm -rf musl-cross-make
-	git clone gh:angt/musl-cross-make
-	cd musl-cross-make
+	git clone gh:angt/musl-cross-make ~/.tmp/mxm
+	cd ~/.tmp/mxm
 	{	command -v curl   >&2 && echo "DL_CMD=curl -C - -L -o"
 		command -v shasum >&2 && echo "SHA1_CMD=shasum -a 1 -c"
 		echo "GCC_VER = 15.1.0"
