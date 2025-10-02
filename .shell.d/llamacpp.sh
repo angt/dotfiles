@@ -1,16 +1,15 @@
 shell_install_llamacpp() (
 	set -e
+	rm -rf ~/.tmp/llama.cpp
 	mkdir -p ~/.tmp
-	cd ~/.tmp
-	rm -rf llama.cpp
-	git clone --depth 1 https://github.com/ggml-org/llama.cpp
-	cd llama.cpp
+	git clone --depth 1 https://github.com/ggml-org/llama.cpp ~/.tmp/llama.cpp
+	cd ~/.tmp/llama.cpp
 	cmake -B build \
-		-DLLAMA_CURL=ON \
-		-DCMAKE_INSTALL_PREFIX="$HOME/.local" \
-		-DCMAKE_INSTALL_LIBDIR="$HOME/.local/lib"
-	cmake --build build --config Release -j
-	cmake --install build
+		-DLLAMA_CURL=OFF \
+		-DLLAMA_OPENSSL=ON \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX="$HOME/.local"
+	cmake --build build -j"$(nproc)" --target install
 )
 
 shell_setup_llamacpp() {
