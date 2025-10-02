@@ -6,4 +6,8 @@ shell_update_terminfo() {
 	done
 }
 
+shell_save_terminfo() {
+	infocmp -x "$TERM" | grep -sv '^#' > ~/.terminfo.d/"$TERM"
+}
+
 [ -e ~/.terminfo ] || shell_update_terminfo
