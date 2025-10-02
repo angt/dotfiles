@@ -49,6 +49,7 @@ shell_reload_sh() {
 	for f in ~/.shell.d/?*."${1##*/}"; do
 		[ -f "$f" ] && . "$f"
 	done
+	unset f
 }
 
 shell_reload() {
