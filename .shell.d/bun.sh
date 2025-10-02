@@ -1,4 +1,8 @@
-shell_install_bun() (
+shell_setup_bun() {
+	shell_add_path ~/.bun/bin
+}
+
+__shell_install_bun() (
 	mkdir -p ~/.tmp
 	cd ~/.tmp || return
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -19,4 +23,8 @@ shell_install_bun() (
 	ln -sf ~/.local/bin/bun ~/.local/bin/node
 )
 
-shell_add_path ~/.bun/bin
+shell_install_bun() {
+	__shell_install_bun && shell_setup_bun
+}
+
+[ -e ~/.bun/bin ] && shell_setup_bun
