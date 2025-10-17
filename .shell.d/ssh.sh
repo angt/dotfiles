@@ -48,6 +48,10 @@ shell_ssh_host_add() {
 	} >> ~/.ssh/config
 }
 
+shell_ssh_hosts() {
+	sed -nE 's/^Host[[:space:]]+//p' ~/.ssh/config | sort -u
+}
+
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
