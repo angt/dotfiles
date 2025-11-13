@@ -22,6 +22,7 @@ shell_ssh_host_rm() {
 	shell_ssh_host_exists "$1" &&
 	sed "/^Host $1$/,/^$/d" ~/.ssh/config > ~/.ssh/config.new &&
 	mv ~/.ssh/config.new ~/.ssh/config
+	shell_reload
 }
 
 shell_ssh_host_addr() {
@@ -46,6 +47,7 @@ shell_ssh_host_add() {
 		done
 		echo
 	} >> ~/.ssh/config
+	shell_reload
 }
 
 shell_ssh_hosts() {
