@@ -12,8 +12,12 @@ __shell_install_zig() (
 	esac
 	ZIG="zig-$ARCH-$OS-$1"
 	[ -d ~/.zig/"$ZIG" ] && return
+	case "$1" in
+	(*dev*) DIR=builds ;;
+	(*)     DIR=download/"$1" ;;
+	esac
 	mkdir -p ~/.zig &&
-	curl -sSf "https://ziglang.org/download/$1/$ZIG.tar.xz" |
+	curl -sSf "https://ziglang.org/$DIR/$ZIG.tar.xz" |
 		tar -Jxf - -C ~/.zig
 )
 
