@@ -1,6 +1,6 @@
 shell_install_cmake() (
 	set -e
-	[ "$1" ] || set -- "4.1.2"
+	[ "$1" ] || set -- "4.2.0"
 	rm -rf ~/.tmp/cmake
 	mkdir -p ~/.tmp
 	git clone --branch "v$1" https://github.com/Kitware/CMake ~/.tmp/cmake
