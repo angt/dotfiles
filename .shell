@@ -53,9 +53,12 @@ shell_reload_sh() {
 }
 
 shell_reload() {
+	[ "$USER" ] || USER=$(id -un)
+	[ "$HOME" ] || HOME=$(eval echo "~$USER")
+	export USER HOME
 	export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 	export MANPATH="/usr/share/man:/usr/local/share/man"
-	unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH
+	unset LD_PRELOAD LD_LIBRARY_PATH DYLD_LIBRARY_PATH
 	shell_add_path ~/.bin
 	shell_reload_sh sh
 	shell_reload_sh "$BASH"
@@ -63,6 +66,7 @@ shell_reload() {
 	shell_reload_sh "${ZSH_VERSION+zsh}"
 	shell_reload_sh "${KSH_VERSION+ksh}"
 	[ -f ~/.local.sh ] && . ~/.local.sh
+	hash -r 2>/dev/null || :
 }
 
 shell_reload
