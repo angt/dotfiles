@@ -1,7 +1,7 @@
-if command -v xclip >/dev/null; then
+if shell_has_cmd xclip; then
 	alias xcopy='xclip -selection clipboard -i'
 	alias xpaste='xclip -selection clipboard -o'
-elif command -v pbcopy >/dev/null; then
+elif shell_has_cmd pbcopy; then
 	alias xcopy='pbcopy'
 	alias xpaste='pbpaste'
 fi

@@ -1,4 +1,4 @@
-if ! command -v setenv >/dev/null; then
+if ! shell_has_cmd setenv; then
 	setenv() {
 		if [ $# -eq 0 ]
 		then env

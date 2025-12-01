@@ -1,5 +1,9 @@
 #!/bin/sh
 
+shell_has_cmd() {
+	command -v "$1" >/dev/null
+}
+
 shell_add_path() {
 	mkdir -p "$1" || return
 	f=$(cd "$1" && pwd)

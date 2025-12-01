@@ -11,7 +11,7 @@ shell_install_vim() (
 	make install -j"$(nproc)"
 )
 
-if command -v vim 1>/dev/null; then
+if shell_has_cmd vim; then
 	export VISUAL=vim
 	export EDITOR=vim
 	alias vi=vim
