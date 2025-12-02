@@ -49,7 +49,7 @@ set noswapfile
 set viminfo=
 
 set updatetime=300
-set laststatus=2
+set laststatus=1
 
 set nojs
 
