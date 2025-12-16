@@ -16,6 +16,7 @@ passphrase=$(
 )
 
 encpipe -e -p "$passphrase" > ~/.clipboard/data
+echo "data filter=lfs diff=lfs merge=lfs -text" > ~/.clipboard/.gitattributes
 
 git -C ~/.clipboard commit -qsam update
 git -C ~/.clipboard push -qf origin master
