@@ -11,7 +11,9 @@ shell_install_lfs() (
 	(darwin) EXT=zip Z= ;;
 	(*)      EXT=tar.gz Z=z;;
 	esac
+	mkdir -p ~/.local/bin
+	cd ~/.local/bin &&
 	curl -sSfL "$URL/$1/git-lfs-$OS-$ARCH-$1.$EXT" |
-		tar -xO$Z -f - "*/git-lfs" > ~/.local/bin/git-lfs
-	chmod +x ~/.local/bin/git-lfs
+		tar -xO$Z -f - "git-lfs-${1#v}/git-lfs" > git-lfs &&
+	chmod +x git-lfs
 )
