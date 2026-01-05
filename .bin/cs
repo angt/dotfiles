@@ -1,22 +1,16 @@
 #!/bin/sh
 
-[ -d ~/.clipboard ] ||
-	git clone -q gh:angt/.clipboard ~/.clipboard ||
-	exit
+[ -f ~/.pubkey ] ||
+	ssh-add -L | grep -s -- ' angt$' > ~/.pubkey
 
-git -C ~/.clipboard fetch -q --depth=1 origin master
-git -C ~/.clipboard reset -q --hard FETCH_HEAD
+gen() {
+	echo "$1" | ssh-keygen -Y sign -f ~/.pubkey -n clipboard-key 2>/dev/null | sha256sum | cut -d' ' -f1
+}
 
-[ -e ~/.clipboard/.pubkey ] ||
-	ssh-add -L | grep -s -- ' angt$' > ~/.clipboard/.pubkey
+pass=$(gen you-shall-not-pass) || exit
+tobe=$(gen to-be-or-not-to-be) || exit
 
-passphrase=$(
-	echo mystupidpublicpassphrase |
-	ssh-keygen -Y sign -f ~/.clipboard/.pubkey -n clipboard-key 2>/dev/null
-)
-
-encpipe -e -p "$passphrase" > ~/.clipboard/data
-echo "data filter=lfs diff=lfs merge=lfs -text" > ~/.clipboard/.gitattributes
-
-git -C ~/.clipboard commit -qsam update
-git -C ~/.clipboard push -qf origin master
+case "$0" in
+(*s) zstd --fast | encpipe -e -p "$pass" | curl -sS -T - "https://ppng.io/$tobe" ;;
+(*g) curl -sS -N "https://ppng.io/$tobe" | encpipe -d -p "$pass" | zstd -d -q ;;
+esac
