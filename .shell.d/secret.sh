@@ -1,5 +1,5 @@
 shell_install_secret() (
-	[ "$1" ] || set -- "v0.14"
+	[ "$1" ] || set -- "v0.16"
 	URL="https://github.com/angt/secret/releases/download"
 	OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 	ARCH=$(uname -m)
