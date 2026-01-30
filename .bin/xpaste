@@ -1,0 +1,4 @@
+#!/bin/sh
+
+command -v xclip   >/dev/null 2>&1 && exec xclip -selection clipboard -o
+command -v pbpaste >/dev/null 2>&1 && exec pbpaste
