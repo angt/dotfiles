@@ -11,6 +11,7 @@
 /.CFUserTextEncoding
 /.DS_Store
 /.Trash
+/.ape-*
 /.aws
 /.brew
 /.bun
@@ -19,10 +20,6 @@
 /.clipboard
 /.config
 /.cosmo
-/.ape-*
-/.lldb
-/.ollama
-/.wine
 /.deno
 /.docker
 /.duckdb
@@ -33,12 +30,15 @@
 /.irssi
 /.kiss
 /.lesshst
+/.lldb
 /.local
 /.local.sh
 /.matplotlib
 /.model.gguf
 /.nimble
 /.npm
+/.ollama
+/.pubkey
 /.python-version
 /.rustup
 /.ssh
@@ -53,6 +53,7 @@
 /.vimroot
 /.wasmer
 /.wget-hsts
+/.wine
 /.yarnrc
 /.z
 /.zcompdump
