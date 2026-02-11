@@ -65,7 +65,7 @@ hi NonText    ctermfg=NONE guifg=NONE
 hi SpellCap   cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 
 cmap w!! w !sudo tee % >/dev/null
-map ° /TODO<ENTER>
+map ]t /TODO<ENTER>
 
 if has("patch-8.1.1564")
     set signcolumn=number
@@ -96,8 +96,8 @@ au BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 au FileType text,markdown,typst setl tw=72
 au BufRead,BufNewFile *.md set filetype=markdown
 
-map à :ALENextWrap <CR>
-map ç :ALEPreviousWrap <CR>
+map <F7> :ALEPreviousWrap <CR>
+map <F9> :ALENextWrap <CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'ggml-org/llama.vim'
