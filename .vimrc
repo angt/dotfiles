@@ -59,10 +59,10 @@ digraph NN 8239 " u202f
 digraph -- 8212 " u2014
 digraph *3 8258 " u2042
 
-hi Normal guifg=white guibg=black
-hi SpecialKey ctermfg=4 guifg=#3465a4
-hi NonText    ctermfg=4 guifg=#3465a4
-hi ALEError   ctermbg=none cterm=underline
+hi Normal     guifg=white guibg=black
+hi SpecialKey ctermfg=NONE guifg=NONE
+hi NonText    ctermfg=NONE guifg=NONE
+hi SpellCap   cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 
 cmap w!! w !sudo tee % >/dev/null
 map ° /TODO<ENTER>
