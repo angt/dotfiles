@@ -3,7 +3,7 @@ shell_install_autotools() (
 	rm -rf ~/.tmp/autotools
 	mkdir -p ~/.tmp/autotools
 	for pkg in \
-		m4-1.4.20 \
+		m4-1.4.21 \
 		autoconf-2.72 \
 		automake-1.18.1 \
 		libtool-2.5.4
