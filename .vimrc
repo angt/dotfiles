@@ -62,6 +62,7 @@ digraph *3 8258 " u2042
 hi Normal     guifg=white guibg=black
 hi SpecialKey ctermfg=NONE guifg=NONE
 hi NonText    ctermfg=NONE guifg=NONE
+hi SpellBad   cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 hi SpellCap   cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 
 cmap w!! w !sudo tee % >/dev/null
