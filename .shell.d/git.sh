@@ -1,5 +1,5 @@
 shell_install_git() (
-	[ "$1" ] || set -- "2.51.0"
+	[ "$1" ] || set -- "2.53.0"
 	set -e
 	rm -rf ~/.tmp/git-*
 	mkdir -p ~/.tmp
