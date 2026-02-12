@@ -21,7 +21,7 @@ __shell_install_go() (
 )
 
 shell_install_go() {
-	[ "$1" ] || set -- "1.25.4"
+	[ "$1" ] || set -- "1.26.0"
 	__shell_install_go "$1" && shell_setup_go
 }
 
