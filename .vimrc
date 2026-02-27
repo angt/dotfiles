@@ -51,6 +51,9 @@ set viminfo=
 set updatetime=300
 set laststatus=1
 
+set modeline
+set modelines=10
+
 set nojs
 
 inoremap <S-Tab> <C-V><Tab>
