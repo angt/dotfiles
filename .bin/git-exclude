@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git ls-files --others --exclude-standard | while read -r f
+    do grep -qxF "$f" .git/info/exclude 2>/dev/null || printf "%s\n" "$f" >> .git/info/exclude
+done
