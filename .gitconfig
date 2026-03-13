@@ -31,6 +31,9 @@
     hf = config user.email angt@huggingface.co
     lastmsg = log -1 --format=%s
     cob = !git checkout -B $(normalize "$(git lastmsg)")
+    skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
+    skipped = !git ls-files -v | grep '^S'
 [diff "hex"]
     textconv = hexdump -v -C
     binary = true
