@@ -47,28 +47,33 @@ shell_add_manpath() {
 	unset f
 }
 
-shell_reload_sh() {
+shell_source() {
 	[ "$1" ] || return
-	[ -d ~/.shell.d ] || return
-	for f in ~/.shell.d/?*."${1##*/}"; do
-		[ -f "$f" ] && . "$f"
+	set -- "${1%/}"
+	for _ss_x in sh \
+		${BASH##*/} \
+		${YASH_VERSION+yash} \
+		${ZSH_VERSION+zsh} \
+		${KSH_VERSION+ksh}
+	do
+		[ "$_ss_x" ] || continue
+		[ -d "$1" ] && _ss_g="$1/*.$_ss_x" || _ss_g="$1.$_ss_x"
+		for _ss_f in $_ss_g
+		do [ -f "$_ss_f" ] && . "$_ss_f"
+		done 2>/dev/null
 	done
-	unset f
+	unset _ss_x _ss_g _ss_f
 }
 
 shell_reload() {
-	[ "$USER" ] || USER=$(id -un)
-	[ "$HOME" ] || HOME=$(eval echo "~$USER")
+	USER=$(id -un)
+	[ "$HOME" ] || eval "HOME=~$USER"
 	export USER HOME
 	export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 	export MANPATH="/usr/share/man:/usr/local/share/man"
 	unset LD_PRELOAD LD_LIBRARY_PATH DYLD_LIBRARY_PATH
 	shell_add_path ~/.bin
-	shell_reload_sh sh
-	shell_reload_sh "$BASH"
-	shell_reload_sh "${YASH_VERSION+yash}"
-	shell_reload_sh "${ZSH_VERSION+zsh}"
-	shell_reload_sh "${KSH_VERSION+ksh}"
+	shell_source ~/.shell.d
 	[ -f ~/.local.sh ] && . ~/.local.sh
 	hash -r 2>/dev/null || :
 }
