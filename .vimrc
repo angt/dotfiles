@@ -103,6 +103,10 @@ au BufRead,BufNewFile *.md set filetype=markdown
 map <F7> :ALEPreviousWrap <CR>
 map <F9> :ALENextWrap <CR>
 
+vnoremap <leader>y y:call system('bkt -', @")<CR>
+nnoremap <leader>p :let @" = system('bkt')<CR>p
+nnoremap <leader>P :let @" = system('bkt')<CR>P
+
 call plug#begin('~/.vim/plugged')
 Plug 'ggml-org/llama.vim'
 Plug 'dense-analysis/ale'
