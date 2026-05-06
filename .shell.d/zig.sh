@@ -11,13 +11,10 @@ __shell_install_zig() (
 	(arm64) ARCH=aarch64 ;;
 	esac
 	ZIG="zig-$ARCH-$OS-$1"
-	[ -d ~/.zig/"$ZIG" ] && return
-	case "$1" in
-	(*dev*) DIR=builds ;;
-	(*)     DIR=download/"$1" ;;
-	esac
+	[ -x ~/.zig/"$ZIG"/zig ] && return
+	rm -rf ~/.zig/"$ZIG"
 	mkdir -p ~/.zig &&
-	curl -sSf "https://ziglang.org/$DIR/$ZIG.tar.xz" |
+	curl -sSf "https://zigmirror.com/$ZIG.tar.xz" |
 		tar -Jxf - -C ~/.zig
 )
 
