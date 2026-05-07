@@ -14,7 +14,7 @@ __shell_install_zig() (
 	[ -x ~/.zig/"$ZIG"/zig ] && return
 	rm -rf ~/.zig/"$ZIG"
 	mkdir -p ~/.zig &&
-	curl -sSf "https://zigmirror.com/$ZIG.tar.xz" |
+	curl -LsSf "https://zigmirror.com/$ZIG.tar.xz" |
 		tar -Jxf - -C ~/.zig
 )
 
