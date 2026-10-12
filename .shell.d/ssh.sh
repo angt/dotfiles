@@ -58,10 +58,22 @@ shell_ssh_hosts() {
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
-[ -f ~/.ssh/config          ] || touch ~/.ssh/config
-[ -f ~/.ssh/authorized_keys ] ||
-	echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArbSYP0EYqQQnBuIoTGvNUcOA5TJGdsDUMLg/OSt2zv angt" > ~/.ssh/authorized_keys
+[ -f ~/.ssh/config ] || cat > ~/.ssh/config <<-EOF
+	Host *
+	HostKeyAlgorithms ssh-ed25519
+	EOF
 
-chmod 600 ~/.ssh/config ~/.ssh/authorized_keys
+[ -f ~/.ssh/known_hosts ] || cat > ~/.ssh/known_hosts <<-EOF
+	gitlab.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAfuCHKVTjquxvt6CM6tdG4SLp1Btn/nOeHHE5UOzRdf
+	github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+	hf.co ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINJjhgtT9FOQrsVSarIoPVI1jFMh3VSHdKfdqp/O776s
+	codeberg.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVIC02vnjFyL+I4RHfvIGNtOgJMe769VTF1VR4EB3ZB
+	EOF
+
+[ -f ~/.ssh/authorized_keys ] || cat > ~/.ssh/authorized_keys <<-EOF
+	ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArbSYP0EYqQQnBuIoTGvNUcOA5TJGdsDUMLg/OSt2zv angt
+	EOF
+
+chmod 600 ~/.ssh/config ~/.ssh/known_hosts ~/.ssh/authorized_keys
 
 shell_ssh_agent
