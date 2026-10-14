@@ -1,0 +1,35 @@
+#!/bin/sh
+
+remote=origin
+detach=
+branch=
+pr=
+
+while [ $# -gt 0 ]; do
+	case "$1" in
+	(-d|--detach) detach=1    ; shift   || exit ;;
+	(-r|--remote) remote="$2" ; shift 2 || exit ;;
+	(-*) cat <<-EOF
+		Usage: $0 [options] <PR_NUMBER> [BRANCH_NAME]
+		Options:
+		  -d, --detach    Checkout to FETCH_HEAD directly (detached HEAD)
+		  -r, --remote    Remote name (default: origin)
+		EOF
+		exit 1 ;;
+	(*)
+		if   [ -z "$pr"     ]; then pr="$1"
+		elif [ -z "$branch" ]; then branch="$1"
+		fi
+		shift ;;
+	esac
+done
+
+case "$pr" in (''|*[!0-9]*)
+	printf "Error: PR_NUMBER must be a positive integer.\n" >&2
+	exit 1
+esac
+
+[ "$detach" ] && branch= || branch="${branch:-pr-$pr}"
+
+git fetch "$remote" "pull/$pr/head" &&
+git checkout ${branch:+-B "$branch"} FETCH_HEAD
