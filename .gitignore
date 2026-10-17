@@ -1,5 +1,6 @@
-*
-!/.**/**
+/*
+!/.*
+
 
 /*.bak
 /*.old
@@ -13,6 +14,7 @@
 /.Trash
 /.ape-*
 /.aws
+/.bash_sessions
 /.brew
 /.bun
 /.cargo
@@ -20,6 +22,7 @@
 /.clipboard
 /.config
 /.cosmo
+/.ctx
 /.deno
 /.docker
 /.duckdb
@@ -30,10 +33,13 @@
 /.irssi
 /.kiss
 /.lesshst
+/.llama-app
+/.llamabarn
 /.lldb
 /.local
 /.local.sh
 /.matplotlib
+/.mkshrc
 /.model.gguf
 /.nimble
 /.npm
@@ -44,6 +50,7 @@
 /.ssh
 /.subversion
 /.sudo_as_admin_successful
+/.swival
 /.terminfo
 /.thumbnails
 /.tmp
@@ -58,4 +65,5 @@
 /.z
 /.zcompdump
 /.zig
+/.zlogin
 /.zsh_sessions
