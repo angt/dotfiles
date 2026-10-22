@@ -10,3 +10,9 @@ shell_install_git() (
 	./configure --prefix="$HOME/.local/usr"
 	make install -j"$(nproc)"
 )
+
+shell_git() {
+	git -C "$HOME" \
+		--git-dir="$HOME/.shell.git" \
+		--work-tree="$HOME" "$@"
+}
