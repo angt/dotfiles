@@ -1,7 +1,4 @@
 shell_install_bucketboard() (
-	rm -rf ~/.tmp/bucketboard
-	mkdir -p ~/.tmp &&
-	git clone https://github.com/angt/bucketboard --depth 1 ~/.tmp/bucketboard &&
-	cd ~/.tmp/bucketboard &&
+	shell_clone_tmp bucketboard https://github.com/angt/bucketboard &&
 	zig build install --prefix ~/.local
 )

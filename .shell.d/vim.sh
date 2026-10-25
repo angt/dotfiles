@@ -1,9 +1,6 @@
 shell_install_vim() (
 	set -e
-	rm -rf ~/.tmp/vim
-	mkdir -p ~/.tmp
-	git clone https://github.com/vim/vim --depth 1 ~/.tmp/vim
-	cd ~/.tmp/vim
+	shell_clone_tmp vim https://github.com/vim/vim
 	./configure \
 		--prefix="$HOME/.local/usr" \
 		--disable-nls \

@@ -1,9 +1,6 @@
 shell_install_llvm() (
 	set -e
-	rm -rf ~/.tmp/llvm
-	mkdir -p ~/.tmp
-	git clone https://github.com/llvm/llvm-project ~/.tmp/llvm
-	cd ~/.tmp/llvm
+	shell_clone_tmp llvm https://github.com/llvm/llvm-project
 	[ "$1" ] && git checkout "$1"
 	cmake -S llvm -B build -G Ninja \
 		-DCMAKE_BUILD_TYPE=Release \

@@ -47,6 +47,7 @@
 /.pubkey
 /.python-version
 /.rustup
+/.shell.git
 /.ssh
 /.subversion
 /.sudo_as_admin_successful

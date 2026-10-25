@@ -9,3 +9,16 @@ if ! shell_has_cmd setenv; then
 		unset "$1"
 	}
 fi
+
+shell_clone_tmp() {
+	[ "$1" ]             &&
+	rm -rf ~/.tmp/"$1"   &&
+	mkdir -p ~/.tmp/"$1" &&
+	cd ~/.tmp/"$1"       &&
+	shift                &&
+	git clone \
+		--filter=blob:none \
+		--recurse-submodules \
+		--also-filter-submodules \
+		"$@" .
+}
