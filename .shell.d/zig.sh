@@ -19,6 +19,6 @@ __shell_install_zig() (
 )
 
 shell_install_zig() {
-	[ "$1" ] || set -- "0.15.2"
+	[ "$1" ] || set -- "0.17.0"
 	__shell_install_zig "$1" && shell_setup_zig "$1"
 }
