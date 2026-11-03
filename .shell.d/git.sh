@@ -17,6 +17,6 @@ shell_git() {
 		--work-tree="$HOME" "$@"
 }
 
-case "$(shell_git remote get-url origin)" in
-(https://*) shell_git remote set-url origin gh:angt/dotfiles
+case "$(shell_git remote get-url --push origin)" in
+(https://*) shell_git remote set-url --push origin gh:angt/dotfiles
 esac
